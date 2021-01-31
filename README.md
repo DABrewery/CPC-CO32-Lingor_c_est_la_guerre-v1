@@ -1,17 +1,22 @@
-# a3_mission_template
-tanin69's default mission template for Arma 3 video game
+# Mission dynamique à objectifs multiples
 
-## Template structure
+## Principes généraux
 
-* /functions : various useful functions
-* /spawn_IA : example scripts for spawn_zone functions
-* CfgFunctions.hpp : config file for functions
-* README.md : this file
-* briefing.sqf : pattern for briefing.sqf file
-* description.ext : pattern for description.ext file. This files contains main description information about the mission, as author name, mission type, mission title, etc. See [https://community.bistudio.com/wiki/Description.ext](https://community.bistudio.com/wiki/Description.ext)
-* init.sqf : pattern for init.sqf file, containing base code used with this template (Lucy initialisation, for example)
-* initServer.sqf : pattern for initServer.sqf file, containing base code used with this template (executed only on the server), like global variables for groups definition, PLUTO init, etc.
+Mission plutôt orientée 2nde partie de soirée.
+Jouable de 7 à 15 joueurs
+On peut se lancer sur un objectif unique, et à chaque objectif, dire "stop ou encore"
+On démarre avec un équipement infanterie classique, mais sans équipement lourd. En fonction des objectifs réalisés, on augmente la puissance de feu et on peut continuer à progresser dans la mission.
 
-For further information, please read the wiki associated with the github repository [https://github.com/DABrewery/a3_mission_template/wiki](https://github.com/DABrewery/a3_mission_template/wiki)
+## Bonus pour les objectifs
 
+research Lab 101 -> avantage technologique majeur
+research Lab 102 -> avantage technologique important
+High Value Target -> les ENI deviennent plus lâches
+Liberate -> x 3 personnels en IA
+Neutralize air support -> Supprime un point de départ des renforts aériens. Matériel aérien à récupérer.
+Destroy Ammnunation Depot -> matériel maritime à récupérer
 
+## Equipement de départ
+
+PMC, avec armement "best of the breed"
+Avantage majeur : un drone RAVEN
