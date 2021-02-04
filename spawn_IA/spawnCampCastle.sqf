@@ -1,5 +1,5 @@
 //Le nom de la zone qui sera utilisé pour tous les spawns 
-private _zn = "SargentoAir_2";
+private _zn = "CampCastle";
 private _grpGarn = objNull;
 private _nbPat = objNull;
 private _probaManedFW = objNull;
@@ -7,23 +7,23 @@ private _probaManedFW = objNull;
 switch true do {
 		case (nbJoueurs < 11): {
 			//
-			_grpGarn = GROUPE_ENI_1_MOYEN;
+			_grpGarn = GROUPE_ENI_2_MOYEN;
 			//
-			_nbPat = [1,2];
+			_nbPat = [2,3];
 			// 
 			_probaManedFW = 0.6;
 		};
 		case (nbJoueurs > 10 && nbJoueurs < 17): {
 			//
-			_grpGarn = GROUPE_ENI_1_MOYEN;
+			_grpGarn = GROUPE_ENI_2_MOYEN;
 			//
-			_nbPat = [2,3];
+			_nbPat = [3,4];
 			// 
 			_probaManedFW = 0.8;
 		};
 		case (nbJoueurs > 16 && nbJoueurs < 24): {
 			//
-			_grpGarn = GROUPE_ENI_1_GRAND;
+			_grpGarn = GROUPE_ENI_2_GRAND;
 			//
 			_nbPat = [3,4];
 			// 
@@ -31,16 +31,16 @@ switch true do {
 		};
 		case (nbJoueurs > 23): {
 			//
-			_grpGarn = GROUPE_ENI_1_GRAND;
+			_grpGarn = GROUPE_ENI_2_GRAND;
 			//
-			_nbPat = [3,4];
-			//
+			_nbPat = [4,5];
+			// 
 			_probaManedFW = 1;
 		}; 
 };
 
 //Spawn des patrouilles
-[_zn, _nbPat, GROUPE_ENI_1_PETIT, opfor] spawn int_fnc_spawnRdmPatrols;
+[_zn, _nbPat, GROUPE_ENI_2_PETIT, opfor] spawn int_fnc_spawnRdmPatrols;
 
 //Spawn des garnisons
 //[_zn, _grpGarn, opfor, nil, nil, 0.1, 1] spawn int_fnc_spawnGarnisons;

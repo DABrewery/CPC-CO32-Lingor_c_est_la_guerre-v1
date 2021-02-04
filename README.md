@@ -16,7 +16,12 @@ Liberate -> x 3 personnels en IA
 Neutralize air support -> Supprime un point de départ des renforts aériens. Matériel aérien à récupérer.
 Destroy Ammnunation Depot -> matériel maritime à récupérer
 
-## Equipement de départ
+## Factions joueurs
 
-PMC, avec armement "best of the breed"
+Une équipe US sur-équipée
+Une équipe type "PICAROS", bien équipée, mais pas de protection balistique
 Avantage majeur : un drone RAVEN
+
+## TODO
+
+Ajouter le hack des computers
