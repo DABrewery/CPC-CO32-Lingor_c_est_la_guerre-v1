@@ -5,14 +5,14 @@
 	[1500,2000,3000],	//2 sensorRange [man,land,air]
 	120,			    //3 QRFtimeout
 	[1000,2000,6000],	//4 QRFrange [man,land,air]
-	[20,30,60],		    //5 QRFdelay [min,mid,max]
+	[60,90,120],		//5 QRFdelay [min,mid,max]
 	240,			    //6 ARTYtimeout
 	[20,30,60],		    //7 ARTYdelay [min,mid,max]
 	[1,2,4],		    //8 ARTYrounds [min,mid,max]
 	[0,40,100]		    //9 ARTYerror [min,mid,max]
 ] call GDC_fnc_pluto;
 
-gdc_plutoDebug = false;
+gdc_plutoDebug = true;
 
 //Get number of players to allow dynamic ENI units number adaptation
 nbJoueurs = playersNumber west + playersNumber resistance;
@@ -99,14 +99,15 @@ _heavyThreat = selectRandom["myMortar", "mySU25", "myMI24" ];
 switch _heavyThreat do {
 	case "myMortar": {
 		private _pos = getMarkerPos(selectRandom ["mrkMortar_1", "mrkMortar_2"]);
-		_spawn = [_pos, 180, "rhs_2b14_82mm_vmf", east] call BIS_fnc_spawnVehicle;
+		private _spawn = [_pos, 180, "rhsgref_tla_2b14", east] call BIS_fnc_spawnVehicle;
 		(_spawn#2) setVariable ["PLUTO_ORDER", "ARTY"];
 	};
 	case "mySU25": {
 		private _pos = getMarkerPos(selectRandom ["mrkSU25_1", "mrkSU25_2"]);
 		private _plane = createVehicle ["RHS_Su25SM_vvsc", _pos, [],0,"NONE"];
 		_plane setdir 90;
-		createVehicleCrew _plane;
+		private _crew = createVehicleCrew _plane;
+		[_crew, "mrkPlSU25_1", 5] spawn GDC_fnc_lucyGroupRandomPatrolFixPoints;
 	};
 	case "myMI24": {
 		private _pos = getMarkerPos(selectRandom ["mrkMI24_1", "mrkMI24_2"]);
@@ -116,10 +117,20 @@ switch _heavyThreat do {
 	};
 };
 
+//Les camps
 execVM "spawn_IA\spawnSargentoRadio_1.sqf";
 execVM "spawn_IA\spawnSargentoRadio_2.sqf";
 execVM "spawn_IA\spawnSargentoAir_1.sqf";
 execVM "spawn_IA\spawnSargentoAir_2.sqf";
 execVM "spawn_IA\spawnSargentoAir_3.sqf";
 execVM "spawn_IA\spawnResearch102_1.sqf";
+execVM "spawn_IA\spawnResearch101.sqf";
 execVM "spawn_IA\spawnCampCastle.sqf";
+execVM "spawn_IA\spawnCampMorada.sqf";
+execVM "spawn_IA\spawnCampNowhere.sqf";
+execVM "spawn_IA\spawnMunDep1.sqf";
+execVM "spawn_IA\spawnMunDep2.sqf";
+execVM "spawn_IA\spawnCheckPointSur.sqf";
+execVM "spawn_IA\spawnCheckPointOeste.sqf";
+execVM "spawn_IA\spawnCorazon_1.sqf";
+execVM "spawn_IA\spawnFOBEddie.sqf";
