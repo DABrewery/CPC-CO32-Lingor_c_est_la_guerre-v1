@@ -17,6 +17,9 @@ gdc_plutoDebug = true;
 //Get number of players to allow dynamic ENI units number adaptation
 nbJoueurs = playersNumber west + playersNumber resistance;
 
+//Server variables
+isPrisonLib = false;
+
 /* Group definition */
 //Russians
 	private _fsl_ENI_1    = "rhs_vmf_flora_rifleman";
@@ -134,3 +137,4 @@ execVM "spawn_IA\spawnCheckPointSur.sqf";
 execVM "spawn_IA\spawnCheckPointOeste.sqf";
 execVM "spawn_IA\spawnCorazon_1.sqf";
 execVM "spawn_IA\spawnFOBEddie.sqf";
+execVM "spawn_IA\spawnPrison.sqf";
