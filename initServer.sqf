@@ -123,9 +123,13 @@ switch _heavyThreat do {
 //Les camps
 execVM "spawn_IA\spawnSargentoRadio_1.sqf";
 execVM "spawn_IA\spawnSargentoRadio_2.sqf";
+execVM "spawn_IA\spawnMarukoRadio.sqf";
 execVM "spawn_IA\spawnSargentoAir_1.sqf";
 execVM "spawn_IA\spawnSargentoAir_2.sqf";
 execVM "spawn_IA\spawnSargentoAir_3.sqf";
+execVM "spawn_IA\spawnMarukoAir_1.sqf";
+execVM "spawn_IA\spawnMarukoAir_2.sqf";
+execVM "spawn_IA\spawnMarukoAir_3.sqf";
 execVM "spawn_IA\spawnResearch102_1.sqf";
 execVM "spawn_IA\spawnResearch101.sqf";
 execVM "spawn_IA\spawnCampCastle.sqf";

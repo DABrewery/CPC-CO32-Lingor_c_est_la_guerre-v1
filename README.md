@@ -1,5 +1,13 @@
 # Mission dynamique à objectifs multiples
 
+## Principes de jeu
+
+10 objectifs au choix, chaque objectif constituant en lui-même une mission.
+
+La mission peut aussi bien être jouée en petit effectif qu'en grand effectif : adaptation du nombre d'hostiles par rapport au nombre de joueurs (et d'IA si l'envie vous en prend).
+
+Le nombre d'objectifs et leur ordre est au choix du commandant d'opération. Bien entendu, la situation stratégique peut guider les choix, certains étant évidents, d'autres moins.
+
 ## Principes généraux
 
 Mission plutôt orientée 2nde partie de soirée.

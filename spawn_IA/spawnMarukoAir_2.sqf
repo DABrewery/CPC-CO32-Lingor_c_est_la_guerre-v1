@@ -1,5 +1,5 @@
 //Le nom de la zone qui sera utilisé pour tous les spawns 
-private _zn = "SargentoRadio_1";
+private _zn = "MarukoAir_2";
 private _grpGarn = objNull;
 private _nbPat = objNull;
 private _probaManedFW = objNull;
@@ -7,7 +7,7 @@ private _probaManedFW = objNull;
 switch true do {
 		case (nbJoueurs < 11): {
 			//
-			_grpGarn = GROUPE_ENI_2_MOYEN;
+			_grpGarn = GROUPE_ENI_1_PETIT;
 			//
 			_nbPat = [1,2];
 			// 
@@ -15,7 +15,7 @@ switch true do {
 		};
 		case (nbJoueurs > 10 && nbJoueurs < 17): {
 			//
-			_grpGarn = GROUPE_ENI_2_MOYEN;
+			_grpGarn = GROUPE_ENI_1_PETIT;
 			//
 			_nbPat = [2,3];
 			// 
@@ -23,7 +23,7 @@ switch true do {
 		};
 		case (nbJoueurs > 16 && nbJoueurs < 24): {
 			//
-			_grpGarn = GROUPE_ENI_2_MOYEN;
+			_grpGarn = GROUPE_ENI_1_MOYEN;
 			//
 			_nbPat = [3,4];
 			// 
@@ -31,19 +31,19 @@ switch true do {
 		};
 		case (nbJoueurs > 23): {
 			//
-			_grpGarn = GROUPE_ENI_2_MOYEN;
+			_grpGarn = GROUPE_ENI_1_MOYEN;
 			//
 			_nbPat = [3,4];
 			//
 			_probaManedFW = 1;
-		}; 
+		};
 };
 
 //Spawn des patrouilles
-[_zn, _nbPat, GROUPE_ENI_2_PETIT, opfor] spawn int_fnc_spawnRdmPatrols;
+[_zn,_nbPat,GROUPE_ENI_1_PETIT,opfor] spawn int_fnc_spawnRdmPatrols;
 
 //Spawn des garnisons
 [_zn, _grpGarn, opfor, nil, nil, 0.1, 1] spawn int_fnc_spawnGarnisons;
 
 //Spawn des armes fixes
-[_zn, opfor, "rhsgref_tla_DSHKM", "rhsgref_tla_rifleman_pm63", 1, _probaManedFW, 0.8] spawn int_fnc_spawnFixedWeapons;
+[_zn, opfor, "rhs_KORD_high_VMF", "rhs_vmf_flora_rifleman", 1, _probaManedFW, 0.8] spawn int_fnc_spawnFixedWeapons;

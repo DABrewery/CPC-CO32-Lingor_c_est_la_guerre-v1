@@ -1,5 +1,5 @@
 //Le nom de la zone qui sera utilisé pour tous les spawns 
-private _zn = "SargentoRadio_1";
+private _zn = "MarukoRadio";
 private _grpGarn = objNull;
 private _nbPat = objNull;
 private _probaManedFW = objNull;
@@ -7,7 +7,7 @@ private _probaManedFW = objNull;
 switch true do {
 		case (nbJoueurs < 11): {
 			//
-			_grpGarn = GROUPE_ENI_2_MOYEN;
+			_grpGarn = GROUPE_ENI_2_PETIT;
 			//
 			_nbPat = [1,2];
 			// 
