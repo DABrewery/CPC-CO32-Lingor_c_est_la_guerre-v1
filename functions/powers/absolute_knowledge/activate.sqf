@@ -2,7 +2,7 @@ _power_id = 'power_absolute_knowledge';
 if(player getVariable [_power_id, false]) exitWith {};
 
 // Init functions
-call compileFinal preprocessFileLineNumbers "powers\absolute_knowledge\functions.sqf";
+call compileFinal preprocessFileLineNumbers "functions\powers\absolute_knowledge\functions.sqf";
 
 // Power activated!
 player setVariable [_power_id, true, true];

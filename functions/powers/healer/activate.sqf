@@ -2,8 +2,8 @@ _power_id = 'power_healer';
 if(player getVariable [_power_id, false]) exitWith {};
 
 // Init functions
-call compileFinal preprocessFileLineNumbers "powers\healer\functions.sqf";
-call compileFinal preprocessFileLineNumbers "powers\regenerate\functions.sqf";
+call compileFinal preprocessFileLineNumbers "functions\powers\healer\functions.sqf";
+call compileFinal preprocessFileLineNumbers "functions\powers\regenerate\functions.sqf";
 
 // Regneration power activated!
 player setVariable [_power_id, true, true];

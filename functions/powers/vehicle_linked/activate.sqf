@@ -2,7 +2,7 @@ _power_id = 'power_vehicle_linked';
 if(player getVariable [_power_id, false]) exitWith {};
 
 // Init functions
-call compileFinal preprocessFileLineNumbers "powers\vehicle_linked\functions.sqf";
+call compileFinal preprocessFileLineNumbers "functions\powers\vehicle_linked\functions.sqf";
 
 // Regneration power activated!
 player setVariable [_power_id, true, true];

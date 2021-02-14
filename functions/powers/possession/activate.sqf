@@ -2,7 +2,7 @@ _power_id = 'power_possession';
 if(player getVariable [_power_id, false]) exitWith {};
 
 // Init functions
-call compileFinal preprocessFileLineNumbers "powers\possession\functions.sqf";
+call compileFinal preprocessFileLineNumbers "functions\powers\possession\functions.sqf";
 
 // Power activated!
 player setVariable [_power_id, true, true];

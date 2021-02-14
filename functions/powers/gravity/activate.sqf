@@ -2,7 +2,7 @@ _power_id = 'power_gravity';
 if(player getVariable [_power_id, false]) exitWith {};
 
 // Init functions
-call compileFinal preprocessFileLineNumbers "powers\gravity\functions.sqf";
+call compileFinal preprocessFileLineNumbers "functions\powers\gravity\functions.sqf";
 
 // Power activated!
 player setVariable [_power_id, true, true];

@@ -1,0 +1,29 @@
+{
+    "sqflint.ignoredVariables": [
+        "evac_win_1",
+        "evac_win_2",
+        "evac_win_3",
+        "evac_win_4",
+        "evac_loose_1",
+        "evac_loose_2",
+        "evac_loose_3",
+        "evac_loose_4",
+        "computer_lab101",
+        "computer_lab102",
+        "scientist101",
+        "computer_Sargento",
+        "computer_Maruko",
+        "caisse_mun_1",
+        "caisse_mun_2",
+        "caisse_mun_3",
+        "caisse_mun_4",
+        "caisse_mun_5",
+        "caisse_mun_6",
+        "caisse_mun_7",
+        "caisse_mun_8",
+        "caisse_mun_9",
+        "caisse_mun_10",
+        "caisse_lab101",
+        "caisse_lab102"
+    ]
+}

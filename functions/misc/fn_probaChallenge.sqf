@@ -23,7 +23,7 @@ _linkedObject setVariable ["lastChallengeResult", ""];
 */
 
 /* Initialize state variables for the linked object */
-//All these variables are public (global exec)
+// All these variables are public (global execution)
 //_linkedObject setVariable ["challengeSuccessfull", false, true];
 private _stopHacking = false; //Possibility to run parallel challenges and to succeed from another challenge
 _linkedObject setVariable ["isBeeingChallenged", true, true];
