@@ -12,13 +12,111 @@
 	[0,40,100]		    //9 ARTYerror [min,mid,max]
 ] call GDC_fnc_pluto;
 
-gdc_plutoDebug = true;
+gdc_plutoDebug = false;
 
 //Get number of players to allow dynamic ENI units number adaptation
 nbJoueurs = playersNumber west + playersNumber resistance;
 
 //Server variables
 isPrisonLib = false;
+computer_lab101 setVariable ["challengeSuccessfull", false, true];
+computer_lab101 setVariable ["isBeeingChallenged", false, true];
+computer_lab102 setVariable ["challengeSuccessfull", false, true];
+computer_lab102 setVariable ["isBeeingChallenged", false, true];
+computer_Sargento setVariable ["challengeSuccessfull", false, true];
+computer_Sargento setVariable ["isBeeingChallenged", false, true];
+computer_Maruko setVariable ["challengeSuccessfull", false, true];
+computer_Maruko setVariable ["isBeeingChallenged", false, true];
+
+/*******************************************/
+/*                CARGO                    */
+/*******************************************/
+
+loadCargo = {
+	params ["_veh","_cargo"];
+	clearMagazineCargoGlobal _veh;
+	clearWeaponCargoGlobal _veh;
+	clearItemCargoGlobal _veh;
+	clearBackpackCargoGlobal _veh;
+	switch (_cargo) do {
+		case "cargo_1": {
+			_veh addItemCargoGlobal ["rhs_mag_rgd5",200];
+			_veh addItemCargoGlobal ["rhs_mag_rgo",200];
+			_veh addMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",100];
+			_veh addMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_7N26",300];
+			_veh addMagazineCargoGlobal ["rhs_30Rnd_545x39_7N6M_AK",500];
+			_veh addMagazineCargoGlobal ["rhs_mag_9x19_17",200];
+			_veh addWeaponCargoGlobal ["rhs_weap_rpg7",10];
+			_veh addMagazineCargoGlobal ["rhs_rpg7_PG7VL_mag",40];		
+			_veh addMagazineCargoGlobal ["rhs_mag_9x19_17",200];
+			_veh addItemCargoGlobal ["ACE_EntrenchingTool",20];
+			_veh addMagazineCargoGlobal ["rhs_mag_nspn_green",50];
+			_veh addMagazineCargoGlobal ["rhs_mag_nspn_red",50];
+			_veh addItemCargoGlobal ["rhs_mag_rdg2_white",50];
+			_veh addItemCargoGlobal ["rhs_mag_rdg2_black",50];
+		};
+		case "cargo_2": {
+			_veh addMagazineCargoGlobal ["APERSBoundingMine_Range_Mag",10];
+			_veh addMagazineCargoGlobal ["rhs_mine_pmn2_mag",10];
+			_veh addMagazineCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag",10];
+			_veh addMagazineCargoGlobal ["DemoCharge_Remote_Mag",10];
+		};
+		case "cargo_3": {
+			_veh addMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_green",20];
+			_veh addMagazineCargoGlobal ["rhs_100Rnd_762x54mmR_7N26",50];
+			_veh addMagazineCargoGlobal ["rhs_30Rnd_545x39_7N6M_AK",100];
+			_veh addMagazineCargoGlobal ["rhs_mag_nspn_green",40];
+			_veh addMagazineCargoGlobal ["rhs_mag_nspn_red",40];
+		};
+		case "cargo_4": {
+			_veh addMagazineCargoGlobal ["rhs_rpg7_PG7VL_mag",40];
+			_veh addMagazineCargoGlobal ["rhs_rpg7_OG7V_mag",20];
+			_veh addMagazineCargoGlobal ["rhs_rpg7_TBG7V_mag",20];
+			_veh addBackpackCargoGlobal ["rhs_rpg_empty",15];
+		};
+		case "cargo_5": {
+			_veh addItemCargoGlobal ["ACE_packingBandage",300];
+			_veh addItemCargoGlobal ["ACE_quikclot",300];
+			_veh addItemCargoGlobal ["ACE_elasticBandage",300];
+			_veh addItemCargoGlobal ["ACE_fieldDressing",400];
+			_veh addItemCargoGlobal ["ACE_salineIV_250",80];
+			_veh addItemCargoGlobal ["ACE_salineIV_500",60];
+			_veh addItemCargoGlobal ["ACE_salineIV",50];
+			_veh addItemCargoGlobal ["ACE_morphine",50];
+			_veh addItemCargoGlobal ["ACE_atropine",50];
+			_veh addItemCargoGlobal ["ACE_tourniquet",40];
+			_veh addItemCargoGlobal ["ACE_surgicalKit",5];
+			_veh addItemCargoGlobal ["ACE_splint",100];
+			_veh addItemCargoGlobal ["Toolkit",5];
+			_veh addItemCargoGlobal ["ACE_Wirecutter",10];
+			_veh addItemCargoGlobal ["ACE_Cabletie",50];
+			_veh addItemCargoGlobal ["ACE_Banana",200];
+			_veh addItemCargoGlobal ["ACE_Bodybag",50];
+			_veh addBackpackCargoGlobal ["rhsgref_ttsko_alicepack",10];
+			_veh addBackpackCargoGlobal ["CUP_B_ACRPara_dpm",10];
+		};
+		case "cargo_lab101": {
+			_veh addItemCargoGlobal ["V_MU_EOD_AAF", 2];
+		};
+		case "cargo_lab102": {
+			_veh addItemCargoGlobal ["V_MU_Rebreather_rus", 2];
+		};
+	};
+};
+
+//Ajoute le cargo des véhicules, caisses, etc.
+[caisse_mun_1,"cargo_1"] call loadCargo;
+[caisse_mun_2,"cargo_3"] call loadCargo;
+[caisse_mun_3,"cargo_5"] call loadCargo;
+[caisse_mun_4,"cargo_2"] call loadCargo;
+[caisse_mun_5,"cargo_1"] call loadCargo;
+[caisse_mun_6,"cargo_1"] call loadCargo;
+[caisse_mun_7,"cargo_1"] call loadCargo;
+[caisse_mun_8,"cargo_5"] call loadCargo;
+[caisse_mun_9,"cargo_2"] call loadCargo;
+[caisse_mun_10,"cargo_3"] call loadCargo;
+[caisse_lab101,"cargo_lab101"] call loadCargo;
+[caisse_lab102,"cargo_lab102"] call loadCargo;
 
 /* Group definition */
 //Russians

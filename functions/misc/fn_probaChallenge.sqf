@@ -100,6 +100,13 @@ for [{_curAttempt = _totAttempts}, {(_curAttempt > 0) && !(_stopHacking)}, {_cur
 			_linkedObject setVariable ["challengeSuccessfull", true, true];
 			_linkedObject setVariable ["isBeeingChallenged", false, true];
 			_linkedObject setVariable ["lastChallengeResult",[true, _elapsedTime, _p], true];
+			
+			/* Spécifique mission */
+			if ((_linkedObject == computer_lab101) || (_linkedObject == computer_lab102)) then {
+				_linkedObject setObjectTextureGlobal [1,"img\screen101_21.jpg"];
+				_linkedObject setObjectTextureGlobal [2,"img\screen101_21.jpg"];
+				_linkedObject setObjectTextureGlobal [3,"img\screen101_21.jpg"];
+			}
 		};
 		_stopHacking = _linkedObject getVariable "challengeSuccessfull";
 		_curAttempt = _curAttempt - 1;

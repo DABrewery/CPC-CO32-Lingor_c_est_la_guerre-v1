@@ -25,7 +25,7 @@
 	]
 ]
 
-//Code d'initialisation personnalisé pour supprimer le support logistique si l'appareil a été endommagé
+//Code d'initialisation personnalisé du module SSS logistic pour supprimer le support logistique si l'appareil a été endommagé
 _this addEventHandler ["dammaged", {"Le support logistique pour la DZ Nord a été endommagé ou détruit.\nIl ne sera plus disponible." remoteExec ["hint"]; isSupportNorthDispo = false;publicVariable "isSupportNorthDispo"}];
 _this addEventHandler ["dammaged", {"Le support logistique pour la DZ Ouest a été endommagé ou détruit.\nIl ne sera plus disponible." remoteExec ["hint"]; isSupportWestDispo = false;publicVariable "isSupportWestDispo"}];
 _this addEventHandler ["dammaged", {"Le support logistique pour la DZ Sud a été endommagé ou détruit.\nIl ne sera plus disponible." remoteExec ["hint"]; isSupportNorthDispo = false;publicVariable "isSupportSouthDispo"}];

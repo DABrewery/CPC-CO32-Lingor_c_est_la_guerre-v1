@@ -7,8 +7,8 @@ overViewPictureLocked = "loadScreen.jpg";
 */
 
 // - Texte de description
-overviewText = "Texte de description pour l'écran de choix de mission";
-overviewTextLocked = "Sous-texte de description pour l'écran de choix de mission";
+overviewText = "Lingor : c'est la guerre !";
+overviewTextLocked = "Les cimetières de Lingor sont magnifiques.";
 
 // - Author
 author = "tanin69"; 
@@ -23,11 +23,11 @@ class Header
 
 // Affichage durant l'écran de chargement
 // - Nom de la mission
-onLoadName = "Texte de mission pour image de chargement"; 
+onLoadName = "Lingor : c'est la guerre !"; 
 // - Texte de description
-onLoadMission = "Sous-texte de mission pour image de chargement";
+onLoadMission = "Les cimetières de Lingor sont magnifiques. Simple visite ou séjour définitif, ça dépendra de vous...";
 // - Image
-loadScreen = "";
+loadScreen = "img\defeat.jpg";
 
 // Autres paramètres de la mission
 enableDebugConsole = 1;
@@ -45,11 +45,11 @@ class CfgDebriefing
 		subtitle = "";
 		description = "Vous avez dit ce que vous alliez faire, vous avez fait ce que vous avez dit... Et vous êtes vivant(s).";
 		pictureBackground = "";
-		picture = "b_inf";
-		pictureColor[] = {0.0,0.3,0.6,1};
+		picture = "mil_flag";
+		pictureColor[] = {1,0.8,0.0,1};
 	};
 
-	class loser
+	class End2
 	{
 		title = "C'est un échec !";
 		subtitle = "";

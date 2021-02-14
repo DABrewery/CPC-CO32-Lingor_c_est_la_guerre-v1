@@ -31,6 +31,13 @@ class CfgFunctions
 			class probaChallenge {};
 			class findClearZoneInArea {};
 			class searchLight {};
+			class isInLoadout {};
+		};
+
+		class powers
+		{
+			file="functions\powers";
+			class activatePowerWithObject {};
 		};
 
 	}
