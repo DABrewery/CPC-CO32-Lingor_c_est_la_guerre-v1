@@ -9,6 +9,9 @@ private _tbMrk = allMapMarkers select {["mrk", _x, true] call BIS_fnc_inString};
 
 //["loadout\loadout.sqf"] call GDC_fnc_lucyConfigLoadoutIA;
 
+//test EH scripté
+[true, "MonEvent", { hint format ["Hello %1. %2", _this select 0, _this select 1]}] call BIS_fnc_addScriptedEventHandler;
+
 //Variables de gestion des supports logistiques. La variable est passée à faux si le support est endommagé ou détruit, ce qui inactive le support (cf. code d'init personnalisé du module logistic de SSS)
 isSupportNorthDispo = true;
 isSupportWestDispo = true;

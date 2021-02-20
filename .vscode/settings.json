@@ -25,5 +25,10 @@
         "caisse_mun_10",
         "caisse_lab101",
         "caisse_lab102"
-    ]
+    ],
+    "sqflint.includePrefixes": {
+
+
+    
+    }
 }

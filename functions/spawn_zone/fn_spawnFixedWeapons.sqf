@@ -131,7 +131,7 @@ gunnerMount = {
 			*/
 			while {true} do {
 				private _menace       = false;
-				private _tbPlayers    = _all_players select {_x != HC_Slot} inAreaArray [getMarkerPos _mrk,RDETECT,RDETECT,0,false];
+				private _tbPlayers    = _all_players select {_x != HC_Slot} inAreaArray [getMarkerPos _mrk,RDETECT,RDETECT,0,false]; //Faut remonter le filtre sur le HC dans la définition de la variable _all_players
 				private _tbHostiles   = allUnits select {side _x == _sideComp} inAreaArray [getMarkerPos _mrk,RDETECT,RDETECT,0,false];
 				
 				{

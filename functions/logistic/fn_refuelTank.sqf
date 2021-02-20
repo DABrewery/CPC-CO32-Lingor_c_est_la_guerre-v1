@@ -36,7 +36,7 @@ _refuelNeededQuantity = _tankCapacity - _tankLoad;
 //Verify the quantity of fuel in the station
 _stationQuantity = [_station] call ace_refuel_fnc_getFuel;
 
-//If the station is empty, exit wit no refuel for the vehicle
+//If the station is empty, exit with no refuel for the vehicle
 if (_stationQuantity == 0) exitWith {hint "La station ne contient plus de fuel, aucun ravitaillement n'a été effectué.";};
 
 //If there is enough fuel in the station to refuel the vehicle to its maximum

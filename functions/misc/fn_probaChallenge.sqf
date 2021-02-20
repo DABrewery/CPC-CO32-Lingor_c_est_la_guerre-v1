@@ -4,7 +4,6 @@ TODO : raise event on challenge success
 
 */
 
-
 params [
 	"_linkedObject",
 	["_maxDuration",300],
@@ -106,7 +105,12 @@ for [{_curAttempt = _totAttempts}, {(_curAttempt > 0) && !(_stopHacking)}, {_cur
 				_linkedObject setObjectTextureGlobal [1,"img\screen101_21.jpg"];
 				_linkedObject setObjectTextureGlobal [2,"img\screen101_21.jpg"];
 				_linkedObject setObjectTextureGlobal [3,"img\screen101_21.jpg"];
-			}
+			};
+			/*
+			if (_linkedObject == objGoParadrop) then {
+				execVM "spawn_IA\spawnParadrop.sqf";
+			};
+			*/
 		};
 		_stopHacking = _linkedObject getVariable "challengeSuccessfull";
 		_curAttempt = _curAttempt - 1;

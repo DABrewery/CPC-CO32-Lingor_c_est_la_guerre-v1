@@ -1,15 +1,17 @@
 /*
 
 Description :
-Activate a Shinriel's Power if the unit hold a given object. A blur effect is played each time the power is activated (i.e. presence of the object in unit inventory is confirmed)
+Activate a Shinriel's Power if the unit is holding a given object. A blur effect is played each time the power is activated (i.e. presence of the object in unit inventory is confirmed). To be placed in an event handler.
 
 Parameters
 0 : OBJECT - the unit to give the power
-1 : STRING - class name of the object to search
+1 : STRING - class name of the object to look for
 2 : STRING - power name ("regenerate" and "infinite_stamina" tested so far)
 
 Example :
-[player, "V_MU_EOD_AAF", "regenerate"] call int_fnc_activatePowerWithObject;
+player addEventHandler ["InventoryClosed", { 
+	[_this#0, "V_MU_EOD_AAF", "regenerate"] call int_fnc_activatePowerWithObject;
+}];
 
 Returns :
 Nothing

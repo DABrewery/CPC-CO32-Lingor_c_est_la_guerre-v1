@@ -118,6 +118,10 @@ loadCargo = {
 [caisse_lab101,"cargo_lab101"] call loadCargo;
 [caisse_lab102,"cargo_lab102"] call loadCargo;
 
+
+/*******************************************/
+/*         IA GROUP DEF                    */
+/*******************************************/
 /* Group definition */
 //Russians
 	private _fsl_ENI_1    = "rhs_vmf_flora_rifleman";
@@ -193,7 +197,10 @@ GROUPE_ENI_2_GRAND = [
 	[_sl_ENI_2, _medic_ENI_2, _tl_ENI_2, _at_ENI_2, _fsl_ENI_2, _fsl_ENI_2, _fsl_ENI_2, _tl_ENI_2, _mg_ENI_2, _lfsl_2_ENI_2, _lfsl_2_ENI_2, _lfsl_2_ENI_2, _tl_ENI_2, _gl_ENI_2]
 ];
 
-/*Spawn des ENIs*/
+
+/*******************************************/
+/*        ENI Spawn                        */
+/*******************************************/
 
 //Menace lourde initiale : un mortier, un SU-25 ou un Hind
 _heavyThreat = selectRandom["myMortar", "mySU25", "myMI24" ];
@@ -218,7 +225,7 @@ switch _heavyThreat do {
 	};
 };
 
-//Les camps
+//Les camps et objectifs
 execVM "spawn_IA\spawnSargentoRadio_1.sqf";
 execVM "spawn_IA\spawnSargentoRadio_2.sqf";
 execVM "spawn_IA\spawnMarukoRadio.sqf";
@@ -240,3 +247,6 @@ execVM "spawn_IA\spawnCheckPointOeste.sqf";
 execVM "spawn_IA\spawnCorazon_1.sqf";
 execVM "spawn_IA\spawnFOBEddie.sqf";
 execVM "spawn_IA\spawnPrison.sqf";
+
+//Les renforts perpétuels... La Russie est grande ;-)
+execVM "spawn_IA\spawnParadrop.sqf";
