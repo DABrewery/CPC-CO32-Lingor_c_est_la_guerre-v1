@@ -32,6 +32,7 @@ class CfgFunctions
 			class findClearZoneInArea {};
 			class searchLight {};
 			class isInLoadout {};
+			class skipTimeWithFog {};
 		};
 
 		class powers

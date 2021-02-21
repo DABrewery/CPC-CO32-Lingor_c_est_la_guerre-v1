@@ -72,15 +72,14 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 //Situation
 player createDiaryRecord ["Diary", ["Situation", "
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br/><br/>
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+La marine russe occupe les points clés : les deux aéroports principaux et quelques points stratégiques. En dehors de cela, c'est l'armée locale qui a la charge de la surveillance des points d'intérêts.<br /><br />
+ Pour le moment, les troupes russes et locales sont dans leurs garnisons et ne patrouillent qu'à proximité immédiate.
 
 "]]; 
 
 //Contexte
 player createDiaryRecord ["Diary", ["Contexte", "
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Lingor est sous l'emprise d'une dictature sanglante. Elle est directement soutenue par l'Armée russe. Votre job est de diminuer la puissance militaire de la junte au pouvoir par tout moyen à votre disposition.
 
 "]];

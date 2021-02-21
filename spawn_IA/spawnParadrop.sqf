@@ -29,8 +29,8 @@ while {true} do {
 		sleep 2700;
 		_isFirst = false;
 	} else {
-		//Vagues suivantes : arrivent toutes les 20 à 40 minutes
-		sleep 1200 + random 1200;
+		//Vagues suivantes : arrivent toutes les 20 à 30 minutes
+		sleep 1200 + random 600;
 	};
 
 	//Récupère le nombre de joueurs vivant pour ajustement du nombre de troupes en renfort
