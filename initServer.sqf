@@ -14,6 +14,9 @@
 
 gdc_plutoDebug = false;
 
+//Cache ZBE
+//[1000,-1,true,1000,1000,1000] execVM "zbe_cache\main.sqf";
+
 //Get number of players to allow dynamic ENI units number adaptation
 nbJoueurs = playersNumber west + playersNumber resistance;
 
@@ -197,7 +200,6 @@ GROUPE_ENI_2_GRAND = [
 	[_sl_ENI_2, _medic_ENI_2, _tl_ENI_2, _at_ENI_2, _fsl_ENI_2, _fsl_ENI_2, _fsl_ENI_2, _tl_ENI_2, _mg_ENI_2, _lfsl_2_ENI_2, _lfsl_2_ENI_2, _lfsl_2_ENI_2, _tl_ENI_2, _gl_ENI_2]
 ];
 
-
 /*******************************************/
 /*        ENI Spawn                        */
 /*******************************************/
@@ -250,3 +252,7 @@ execVM "spawn_IA\spawnPrison.sqf";
 
 //Les renforts perpétuels... La Russie est grande ;-)
 execVM "spawn_IA\spawnParadrop.sqf";
+execVM "spawn_IA\spawnMecas.sqf";
+
+//Script pour les projecteurs de nuit
+[] spawn int_fnc_initSearchlight;

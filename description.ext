@@ -17,8 +17,8 @@ author = "tanin69";
 class Header
 {
 	gameType = Coop; // MP mission type
-	minPlayers = NN;
-	maxPlayers = NN;
+	minPlayers = 07;
+	maxPlayers = 32;
 };
 
 // Affichage durant l'écran de chargement

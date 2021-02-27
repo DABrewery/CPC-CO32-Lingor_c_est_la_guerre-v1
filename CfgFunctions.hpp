@@ -21,8 +21,10 @@ class CfgFunctions
 
 		class logistic
 		{
-			class cargoVehicle {};
+			file="functions\logistic";
+			class SSSCargo {};
 			class refuelTank {};
+			class addCargo {};
 		};
 		
 		class misc
@@ -30,10 +32,16 @@ class CfgFunctions
 			file="functions\misc";
 			class probaChallenge {};
 			class findClearZoneInArea {};
-			class searchLight {};
 			class isInLoadout {};
 			class skipTimeWithFog {};
 		};
+
+		class searchlight
+		{
+			file="functions\searchlight";
+			class initSearchlight {};
+			class searchlight {};
+		}
 
 		class powers
 		{

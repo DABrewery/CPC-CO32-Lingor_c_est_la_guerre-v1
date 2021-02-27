@@ -33,7 +33,7 @@ while {true} do {
 		sleep 1200 + random 600;
 	};
 
-	//Récupère le nombre de joueurs vivant pour ajustement du nombre de troupes en renfort
+	//Récupère le nombre de joueurs vivants pour ajustement du nombre de troupes en renfort
 	private _allPlayers = (playableUnits select {_x != HC_Slot}) + (switchableUnits select {_x != HC_Slot});
 	private _nbAlivePlayers = count _allPlayers;
 	systemChat str _nbAlivePlayers;

@@ -26,4 +26,10 @@ Avantage majeur : un drone RAVEN
 
 ## TODO
 
-Ajouter le hack des computers
+- Renforts méca -> OK
+- Caisses de réappro -> OK
+- Intégration script flee -> finalement, non
+- ZBE_Cache -> Pas activé
+- init du script searchlight -> OK
+- Tests logistiques : réparations -> OK
+- Gestion du drone RAVEN -> OK

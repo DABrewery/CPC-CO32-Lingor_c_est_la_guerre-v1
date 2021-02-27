@@ -45,6 +45,7 @@ if (isServer || isDedicated) then {
 	clearWeaponCargoGlobal _veh;
 	clearItemCargoGlobal _veh;
 	clearBackpackCargoGlobal _veh;
+	_veh addBackpackCargoGlobal ["B_rhsusf_B_BACKPACK",1];
 	_veh addBackpackCargoGlobal ["rhsusf_assault_eagleaiii_coy",15];
 	_veh addMagazineCargoGlobal ["SatchelCharge_Remote_Mag", 4];
 	_veh addMagazineCargoGlobal ["DemoCharge_Remote_Mag", 6];
