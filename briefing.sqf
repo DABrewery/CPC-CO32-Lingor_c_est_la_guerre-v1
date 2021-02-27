@@ -1,5 +1,134 @@
 ﻿/* Briefing au format sqf */
 
+
+//Les objectifs
+_t1 = player createSimpleTask["Steal technology, research Lab 101"];
+
+_t1 setSimpleTaskDescription ["
+<marker name='marker_objective_researchLab101'>Le laboratoire de recherche 101</marker> a permis de concevoir une technologie qui pourrait donner un avantage majeur à celui qui en disposera.<br/><br/>
+
+Le laboratoire est protégé par une garnison relativement ettofée. Pour accéder à cette technologie, il vous faut hacker le PC se trouvant dans le laboratoire. Une fois cela fait, vous devriez pouvoir vous emparer et utiliser cette technologie<br/><br/>
+
+Tous les personnels sont en mesure de procéder à la tentative de hacking (interaction ACE sur le PC)<br/><br/>
+
+Essayez de ne pas tuer le scientifique présent, il pourrait vous donner des renseignements utiles",
+"Steal techno - Lab 101", "Steal techno - Lab 101"
+];
+
+_t2 = player createSimpleTask["Steal technology, research Lab 102"];
+
+_t2 setSimpleTaskDescription ["
+<marker name='marker_objective_researchLab102'>Le laboratoire de recherche 102</marker> a permis de concevoir une technologie qui pourrait donner un avantage certain à celui qui en disposera.<br/><br/>
+
+Le laboratoire est protégé par une petite garnison. Pour accéder à cette technologie, il vous faut hacker le PC se trouvant dans le laboratoire. Une fois cela fait, vous devriez pouvoir vous emparer et utiliser cette technologie<br/><br/>
+
+Tous les personnels sont en mesure de procéder à la tentative de hacking (interaction ACE sur le PC).",
+"Steal techno - Lab 102", "Steal techno - Lab 102"
+];
+
+_t3 = player createSimpleTask["Free the comrades"];
+
+_t3 setSimpleTaskDescription ["
+L'armée locale détient nos camarades dans <marker name='marker_objective_freeComrades'>une prison à l'écart des agglomérations</marker>. Nos camarades sont torturés et nous avons les pires craintes pour leur survie.<br/><br/>
+
+Neutrlisez la garnison, puis libérez les camarades. Ils rejoindront aussi vite que possible une cache au milieu de la jungle. Lorsque le premier prisonnier aura rejoint la cache, il prendra contact avec le commandement des Picaros. Il est très probable qu'une opération de sabotage sera organisée pour fêter cela. Vous devriez en être informés si tout va bien.<br/><br/>
+
+<font color='#ff8205'>Protocole de libération des prisonniers</font><br/>
+Les collègues sont traumatisés par les mauvais traitements qu'ils ont subis depuis plusieurs semaines. Suivez précisément le protocole suivant pour assurer qu'ils seront en mesure de se débrouiller par eux-mêmes par la suite :<br/>
+> Escortez chaque prisonnier à la sortie du batiment<br />
+> Libérez le leader en premier (il a eu le droit de garder sa casquette)<br />
+> Il ne partira pas de lui-même car il sera probablement encore très fragile : autorisez-le à prendre la poudre d'escampette (interaction ACE sur le prisonnier)<br />
+> Libérez ensuite tous les picaros de son batiment, ils devraient le suivre sans problème.",
+"Free the comrades", "Free the comrades"
+];
+
+_t4 = player createSimpleTask["Kill the High Value Target"];
+
+_t4 setSimpleTaskDescription ["
+Un officier supérieur russe se repose dans la <marker name='marker_objective_militaryHQ'>ville de Corazon</marker>.<br/><br/>
+
+Eliminez-le, ainsi que sa garde rapprochée. On espère que sa disparition ralentira l'arrivée de renforts externes.",
+"Kill the High Value Target", "Kill the High Value Target"
+];
+
+_t5 = player createSimpleTask["Neutralize anti-air support - Maruko"];
+
+_t5 setSimpleTaskDescription ["
+L'aéroport international de Maruko est l'infrastructure principale russe. Il leur permet de maintenir leur puisance militaire sur Lingor. L'aéroport est fortement défendu par :<br/>
+> une garnison sur <marker name='marker_garn_Maruko'>le camp militaire</marker> contigü à l'aéroport<br/>
+> un <marker name='marker_objective_MarukoAirport'>dispositif anti-aérien</marker> constitué d'une Shilka (ZSU-23-4V) et d'un poste de tir fixe Djigit (9k38 Igla)<br/>
+> potentiellement, un Mi-24 ou un Su25, mais ceux-ci pourraient être en opération, on n'est donc pas sûrs de leur présence<br/>
+> des patrouilles nombreuses sur la zone, essentiellement sur partie sud de l'aéroport<br/><br/>
+
+Il parait peu probable que vous puissiez prendre le contrôle de ce point stratégique par vos propres moyens, sauf à disposer de moyens lourds. Néanmoins, neutraliser le dispositif anti-aérien sécurisera une partie importante de l'espace aérien et devrait vous permettre de disposer d'une maîtrise, au moins partielle, de la troisième dimension.<br/><br/>
+
+Si, en plus, vous parvenez à hacker la tour de contrôle à proximité, vous serez en position forte pour prendre le contrôle de la zone (voir objectifs suivants).",
+"Neutralize anti-air support - Maruko", "Neutralize anti-air support - Maruko"
+];
+
+_t6 = player createSimpleTask["Hack the radio station - Maruko"];
+
+_t6 setSimpleTaskDescription ["
+Une <marker name='marker_objective_radioStation_2'>station radio à proximité de l'aéroport international de Maruko</marker> permet les communications longues distance.<br/><br/>
+
+Neutralisez la garde de la station radio et hackez le PC qui la contrôle (interaction ACE sur le PC). Le PC est faibement protégé et vous devriez pouvoir en venir à bout sans trop de difficultés.<br/><br/>
+
+Cela vous permettra d'utiliser la station radio à vos propres fins, par exemple, en appelant les Marines pour un débarquement en force sur l'aéroport.<br/><br/>
+
+Bien entendu, n'appelez ces renforts que si vous avez la maîtrise de l'air sur le nord de Lingor, sinon, ce sera une boucherie.",
+"Hack the radio station - Maruko", "Hack the radio station - Maruko"
+];
+
+_t7 = player createSimpleTask["Neutralize anti-air support - Sargento"];
+
+_t7 setSimpleTaskDescription ["
+L'aéroport de Sargento est une infrastructure russe importante. Il leur permet notamment de contrôler l'espace aérien sur la partie sud de Lingor. L'aéroport est défendu par :<br/>
+> une garnison sur <marker name='marker_garn_Sargento'>le camp militaire</marker> contigü à l'aéroport<br/>
+> un <marker name='marker_objective_SargentoAirport'>dispositif anti-aérien</marker> constitué de deux ZU-23-2 à chaque extrémité de la piste<br/>
+> potentiellement, un Mi-24 ou un Su25, mais ceux-ci pourraient être en opération, on n'est donc pas sûrs de leur présence<br/>
+> quelques patrouilles sur la zone<br/><br/>
+
+Il parait difficile que vous puissiez prendre le contrôle de ce point stratégique par vos propres moyens, sauf à disposer de moyens lourds. Néanmoins, neutraliser le dispositif anti-aérien sécurisera une partie importante de l'espace aérien et devrait vous permettre de disposer d'une maîtrise, au moins partielle, de la troisième dimension.<br/><br/>
+
+Si, en plus, vous parvenez à hacker la tour de contrôle à proximité, vous serez en position forte pour prendre le contrôle de la zone (voir objectifs suivants).",
+"Neutralize anti-air support - Sargento", "Neutralize anti-air support - Sargento"
+];
+
+_t8 = player createSimpleTask["Hack the radio station - Sargento"];
+
+_t8 setSimpleTaskDescription ["
+Une <marker name='marker_objective_radioStation_1'>station radio à proximité de l'aéroport de Sargento</marker> permet les communications longues distance.<br/><br/>
+
+Neutralisez la garde de la station radio et hackez le PC qui la contrôle (interaction ACE sur le PC). Le PC est faibement protégé et vous devriez pouvoir en venir à bout sans trop de difficultés.<br/><br/>
+
+Cela vous permettra d'utiliser la station radio à vos propres fins, par exemple, en appelant les Marines pour un débarquement en force sur l'aéroport.<br/><br/>
+
+Bien entendu, n'appelez ces renforts que si vous avez la maîtrise de l'air sur le nord de Lingor, sinon, ce sera une boucherie.",
+"Hack the radio station - Sargento", "Hack the radio station - Sargento"
+];
+
+_t9 = player createSimpleTask["Destroy the ammunition depot - Vidora"];
+
+_t9 setSimpleTaskDescription ["
+Le <marker name='marker_objective_CampMarpaso'>petit camp de Marpaso</marker> contient un important dépôt de munitions.<br/><br/>
+
+Neutralisez la garnison et faites pêter le dépôt. Vous pouvez vous servir avant<br/><br/>
+
+Ah, juste un conseil : les munitions, ça explose facilement. Faites en sorte que le déclenchement du feu d'artifice soit volontaire et sécurisé...",
+"Destroy the ammunition depot - Vidora", "Destroy the ammunition depot - Vidora"
+];
+
+_t10 = player createSimpleTask["Destroy the ammunition depot - Oeste Harbor"];
+
+_t10 setSimpleTaskDescription ["
+Le <marker name='marker_objective_OesteHarbor'>petit camp de Oeste Harbor</marker> contient un important dépôt de munitions.<br/><br/>
+
+Neutralisez la garnison et faites pêter le dépôt. Vous pouvez vous servir avant<br/><br/>
+
+Ah, juste un conseil : les munitions, ça explose facilement. Faites en sorte que le déclenchement du feu d'artifice soit volontaire et sécurisé...",
+"Destroy the ammunition depot - Oeste Harbor", "Destroy the ammunition depot - Oeste Harbor"
+];
+
 //Crédits
 player createDiaryRecord ["Diary", ["Crédits", "
 
@@ -9,16 +138,18 @@ Auteur : tanin69<br/><br/>
 
 <font color='#ff9605'>Merci à Mystery, Sparfell, Shinriel pour les bibliothèques de GDC_Lib https://github.com/GdC-Framework/GdC_lib/<br/>
 > Re-merci à Shinriel pour les scripts déments de super pouvoirs<br/>
-> Merci à [GIE] Gavin 'Morbakos' Sertix pour plusieurs scripts intégrés en routine dans mes missions</font><br/><br/>
+> Merci à [GIE] Gavin 'Morbakos' Sertix pour plusieurs scripts intégrés en routine dans mes missions</font color><br/><br/>
 
-<font color='#82ff05'>Remerciements spéciaux à<br/>
+<font color='#82ff05'>Remerciements spéciaux à</font color><br/>
 > Bruno (aka SBS) pour l'inspiration initiale : parce que oui, c'est une mission pensée d'abord pour une seconde partie de soirée (et les secondes parties de soirée avec Bruno, c'est juste vraiment bien)<br/>
 > Mystery (vache sacrée) parce qu'il est toujours là, même s'il se fait chier pendant 90% des parties. Il m'a poussé à introduire de la SURPRISE dans cette mission (et les autres), mais on verra à l'usage si c'est réussi<br/>
 > Sparfell (autre vache sacrée) parce que les mythiques cache-cash m'ont donné envie de faire une mission à longue durée de vie... Différente<br/><br/>
 
-<font color='#ff0505'>Remerciements éternels<br/>
+<font color='#ff0505'>Remerciements éternels</font color><br/>
 > A tous les canards, vous savez bien pourquoi !<br/>
-> A ma femme qui ne m'a pas encore pas quitté, je ne sais toujours pas pourquoi (en dehors de mes talents sexuels exceptionnels, mais ça n'explique quand même pas tout)
+> A ma femme qui ne m'a pas encore pas quitté, je ne sais toujours pas pourquoi (en dehors de mes talents sexuels exceptionnels, mais ça n'explique quand même pas tout)<br/><br/>
+
+Release notes : https://github.com/DABrewery/CPC-CO15-Lingor_c_est_la_guerre-v1
 
 "]];
 
@@ -40,9 +171,15 @@ Une fois sur le point d'évac, faites une interaction ACE sur une des helipad li
 player createDiaryRecord ["Diary", ["Logistique", "
 
 <font color='#82ff05'>Réapprovisionnement</font color><br/>
-Seuls les MARSOC équipés d'une PRC-148 sont en mesure de demander du réappro ! (SSS - interaction ACE sur vous-même)<br/>
-A proximité de vos campements (<marker name='marker_camp_North'>au nord</marker>, à <marker name='marker_camp_West'>l'ouest</marker> et au <marker name='marker_camp_South'>sud est</marker>), vous disposez de 3 zones à partir desquelles vous pouvez appeler des collègues pour vous faire larguer du réappro.<br/>
-Vous pouvez vous faire larguer le stuff n'importe où... Mais attention : si l'appareil de réappro est endommagé ou détruit, vous ne disposerez plus de logistique sur cette zone.<br/><br/>
+
+A proximité de vos campements (<marker name='marker_camp_North'>au nord</marker>, à <marker name='marker_camp_West'>l'ouest</marker> et au <marker name='marker_camp_South'>sud est</marker>), vous disposez de 3 zones à partir desquelles vous pouvez appeler VTOL pour vous faire larguer du réappro.<br/>
+Vous pouvez vous faire larguer le stuff n'importe où... Mais attention : si l'appareil de réappro est endommagé ou détruit, vous ne pourrez plus appeler le VTOL à partir de cette zone.<br/>
+Dans sa grande bonté, outre des munitions en quantité illimitée, l'armée US peut vous larguer :<br/>
+> Un camion tactique de type M1078 non armé pouvant transporter au moins 16 personnels, ainsi que des caisses de matériel<br/>
+> Un camion tactique de type M1078 armé d'une M1, avec la même capacité d'emport de personnel et de matériel<br/>
+> Un véhicule tout terrain non armé MRZR 4<br/><br/>
+
+<font color='#ff8205'>Seuls les MARSOC équipés d'une PRC-148 sont en mesure de demander du réappro !</font color> (SSS - interaction ACE sur vous-même)<br/><br/>
 
 <font color='#82ff05'>Réparations</font color><br/>
 Vous êtes tous des bricolos corrects : vous pouvez procéder à la plupart des réparations de base. Néanmoins :<br/>
@@ -57,12 +194,10 @@ player createDiaryRecord ["Diary", ["Equipement", "
 <font color='#ff8205'>Récupération de matériel</font color><br/>
 Il y a fort à parier que vous pourrez voler beaucoup de matériel, y/c du lourd : sachez en tirer profit !<br/>
 > Tous les personnels peuvent récupérer les armes légères et conduire les véhicules légers (rappel : un URAL est un véhicule léger). Les MARSOC savent également se servir des armements de type .50, qu'ils soient au sol ou embarqués (parce que ce sont des MARSOC, quand même)<br/>
-> Les Picaros (et uniquement eux) peuvent opérer tous les équipements récupérés: blindés lours ou légers, aéronefs... Seules les compétences disponibles dans l'équipe limitent leurs possibilités.<br/><br/>
+> Les Picaros (et uniquement eux) peuvent opérer tous les équipements récupérés: blindés lourds ou légers, aéronefs... Seules les compétences disponibles dans l'équipe limitent leurs possibilités.<br/><br/>
 
 <font color='#ff8205'>MARSOC</font color><br/>
-Ben, ce sont des MARSOC : suréquipés...
-
-En quelque sorte :<br/><br/>
+Ben, ce sont des MARSOC. Ils sont bien équipés, mais clairement plutôt pour l'assaut. Ils ne disposent pas de moyens AA et n'ont que le minimum en AT.<br/><br/>
 
 <font color='#ff8205'>Picaros</font color><br/>
 Armement de type russe. Pas de protection balistique parce que les chefs Picaros disent que c'est pour les tafioles. Même s'il est censé bien connaitre le terrain, le CdO Picaros a quand même réussi à négocier un micro-DAGR auprès des MARSOC. En plus d'une équipe d'assaut courageuse, les Picaros peuvent engager :<br/>
@@ -74,7 +209,7 @@ Armement de type russe. Pas de protection balistique parce que les chefs Picaros
 
 <font color='#ff8205'>Caisses</font color><br/>
 Vous avez pu emmener avec vous 3 caisses de matos jusqu'à votre point d'insertion :<br/>
-> Du matos US avec de l'équipement pour OP nocturne et deux trois babioles, dont des radios LP et CP supplémentaires, mais surtout le drone Raven<br/>
+> Du matos US avec de l'équipement pour OP nocturne et deux trois babioles, dont des radios LP et CP supplémentaires, mais surtout un drone Raven<br/>
 > Du matos Picaros avec le même type de stuff que les MARSOC, mais en version russe<br/>
 > Du matos médical, dont du sang (tous les samedis matins sur la place de l'Eglise) pour ce vampire de Thétard<br/>
 
@@ -102,9 +237,9 @@ On pense que les russes réagiront et enverront des renforts aéroportés (VDV),
 "]];
 
 //Mission
-player createDiaryRecord ["Diary", ["Objectifs (accroche-toi, mon canard)", "
+player createDiaryRecord ["Diary", ["Objectifs", "
 
-10 objectifs au choix, chaque objectif constituant en lui-même une mission. Planifiez chacun des objectifs avec soin... (conseil d'ami).<br /><br />
+10 objectifs au choix, chaque objectif constituant en lui-même une mission. Pour le détail de chaque objectif, consultez l'onglet 'Taches'.<br /><br />
 
 (cliquez sur le titre de l'objectif)<br/><br/>
 
@@ -120,7 +255,7 @@ Si réussite : une opération de sabotage est déclenchée par les Picaros si au
 <font color='#ff0505'><marker name='marker_objective_militaryHQ'>Kill the High Value Target</marker></font color><br/>
 Si réussite : les renforts extérieurs ont moins de chances d'arriver.<br/><br/>
 
-<font color='#ff0505'>Neutralize air support : <marker name='marker_objective_MarukoAirport'>Maruko </marker> ou <marker name='marker_objective_SargentoAirport'>Sargento</marker></marker></font color> (Dangerous Baby !!)<br/>
+<font color='#ff0505'>Neutralize anti-air support : <marker name='marker_objective_MarukoAirport'>Maruko </marker> ou <marker name='marker_objective_SargentoAirport'>Sargento</marker></marker></font color> (Dangerous Baby !!)<br/>
 Si réussite : sécurise l'espace aérien environnant.<br/><br/>
 
 <font color='#ff0505'>Hack the radio station : <marker name='marker_objective_radioStation_2'>Maruko</marker> ou <marker name='marker_objective_radioStation_1'>Sargento</marker></marker></font color><br/>

@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1537;
+	toggles=1665;
 	class ItemIDProvider
 	{
-		nextID=4390;
+		nextID=4392;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1554;
+		nextID=1606;
 	};
 	class Camera
 	{
 		pos[]={4527.5166,156.10822,1770.3129};
-		dir[]={-0.83353913,-0.54748261,-0.073995419};
-		up[]={-0.54533803,0.83681709,-0.048411068};
-		aside[]={-0.088424847,3.7252903e-009,0.9960829};
+		dir[]={-0.83353925,-0.54748243,-0.073995426};
+		up[]={-0.54533786,0.8368172,-0.048411045};
+		aside[]={-0.088424847,-3.7252903e-009,0.99608284};
 	};
 };
 binarizationWanted=0;
@@ -1815,7 +1815,7 @@ class Mission
 			name="Objectives";
 			class Entities
 			{
-				items=15;
+				items=17;
 				class Item0
 				{
 					dataType="Marker";
@@ -1875,7 +1875,7 @@ class Mission
 					dataType="Marker";
 					position[]={6659.061,12.19,6864.939};
 					name="marker_objective_MarukoAirport";
-					text="Neutralize air defence";
+					text="Neutralize air defense";
 					type="mil_objective";
 					colorName="ColorRed";
 					id=8;
@@ -1885,7 +1885,7 @@ class Mission
 					dataType="Marker";
 					position[]={4275.5732,23.639999,1461.587};
 					name="marker_objective_SargentoAirport";
-					text="Neutralize air defence";
+					text="Neutralize air defense";
 					type="mil_objective";
 					colorName="ColorRed";
 					id=9;
@@ -1972,9 +1972,29 @@ class Mission
 					id=40;
 					atlOffset=-13.451061;
 				};
+				class Item15
+				{
+					dataType="Marker";
+					position[]={6167.3711,12.17,6792.6489};
+					name="marker_garn_Maruko";
+					text="Camp Maruko";
+					type="mil_warning";
+					colorName="ColorRed";
+					id=4390;
+				};
+				class Item16
+				{
+					dataType="Marker";
+					position[]={4147.542,23.639999,1631.4139};
+					name="marker_garn_Sargento";
+					text="Camp Sargento";
+					type="mil_warning";
+					colorName="ColorRed";
+					id=4391;
+				};
 			};
 			id=52;
-			atlOffset=71.74894;
+			atlOffset=39.325142;
 		};
 		class Item4
 		{
