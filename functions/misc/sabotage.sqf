@@ -23,7 +23,7 @@ switch _zoneSabotage do {
 "Un prisonnier a rejoint la cache et a pu contacter les guerrilleros.\n\nOn nous informe qu'ils procéderont à une opération de sabotage sur\n " + _str + ".\n\n Elle aura lieu dans " + str(_delaySabotage) + " minutes." remoteExec ["hint"];
 
 //Dort en attendant le moment du sabotage
-sleep _delaySabotage * 60;
+sleep (_delaySabotage * 60);
 //sleep _delaySabotage;
 
 //Fait exploser des charges dans la zone de sabotage 
