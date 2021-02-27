@@ -5,8 +5,7 @@ private _tbMrk = allMapMarkers select {["mrk", _x, true] call BIS_fnc_inString};
 {_x setMarkerAlpha 0.0} forEach _tbMrk;
 
 //LUCY (-> lancé dans l'init.sqf)
-[0.5,"mkr_spawn_static_unit",true,600.0,false,3600.0,true,true,"COLONEL"] call GDC_fnc_lucyInit;
-
+[2,"mkr_spawn_static_unit",true,600.0,false,3600.0,true,true,"COLONEL"] call GDC_fnc_lucyInit;
 
 //Spawn au choix des joueurs avec des caisses de matos
 private _tbObjSpawn = [];
@@ -53,7 +52,7 @@ if (isServer || isDedicated) then {
 	_veh addItemCargoGlobal ["ACE_Clacker",2];
 	_veh addItemCargoGlobal ["ACRE_PRC148",4];
 	_veh addItemCargoGlobal ["ACRE_PRC343",10];
-	_veh addItemCargoGlobal ["rhs_usf_ANPVS_14",20];
+	_veh addItemCargoGlobal ["rhsusf_ANPVS_14",20];
 	_veh addItemCargoGlobal ["cup_Vector21Nite",3];
 	_veh addItemCargoGlobal ["ACE_Flashlight_XL50",20];
 	_veh addItemCargoGlobal ["ACE_wirecutter",5];
@@ -197,7 +196,17 @@ _action_hack_dico = [
 	"Hacker le système : attaque par dictionnaire",
 	"",
 	{
-		[15, [], {[computer_lab101, 300, [0.0001,0.001,0.002,0.023]] spawn int_fnc_probaChallenge;},{hint "Challenge system connection aborted"}, "Connexion et initialisation du système de piratage. Merci de patienter..."] call ace_common_fnc_progressBar;
+		[
+			15,
+			[],
+			{
+				computer_lab101 setObjectTextureGlobal [1,"img\hacker_1.jpg"];
+				computer_lab101 setObjectTextureGlobal [2,"img\hacker_1.jpg"];
+				computer_lab101 setObjectTextureGlobal [3,"img\hacker_1.jpg"];
+				[computer_lab101, 300, [0.0001,0.001,0.002,0.023]] spawn int_fnc_probaChallenge;
+			},
+			{hint "Challenge system connection aborted"}, "Connexion et initialisation du système de piratage. Merci de patienter..."
+		] call ace_common_fnc_progressBar;
 	},
 	{!(computer_lab101 getVariable "challengeSuccessfull") && !(computer_lab101 getVariable "isBeeingChallenged")}
 ] call ace_interact_menu_fnc_createAction;
@@ -373,6 +382,45 @@ _action_call_marines = [
 	{(computer_Maruko getVariable "challengeSuccessfull")}
 ] call ace_interact_menu_fnc_createAction;
 [computer_Maruko, 0, ["ACE_MainActions"], _action_call_marines] call ace_interact_menu_fnc_addActionToObject;
+//Interactions pour fuite des prisonniers
+_action = [ 
+ "Flee", 
+ "Autoriser à prendre la fuite", 
+ "", 
+ { 
+  private _wp = grp_prisonners_1 addWaypoint [getMarkerPos "mrkFuitePrisonners",0]; 
+  _wp setWaypointType "MOVE"; 
+  (leader grp_prisonners_1) enableAI "PATH";
+  isPrisonLib = true;
+  publicVariableServer "isPrisonLib";
+ }, 
+ {captive (leader grp_prisonners_1) == false} 
+] call ace_interact_menu_fnc_createAction;
+[
+ leader grp_prisonners_1, 
+ 0, 
+ ["ACE_MainActions"], 
+ _action 
+] call ace_interact_menu_fnc_addActionToObject;
+_action = [ 
+ "Flee", 
+ "Autoriser à prendre la fuite", 
+ "", 
+ { 
+  private _wp = grp_prisonners_2 addWaypoint [getMarkerPos "mrkFuitePrisonners",0]; 
+  _wp setWaypointType "MOVE"; 
+  (leader grp_prisonners_2) enableAI "PATH";
+  isPrisonLib = true;
+  publicVariableServer "isPrisonLib";
+ }, 
+ {captive (leader grp_prisonners_2) == false} 
+] call ace_interact_menu_fnc_createAction;
+[
+ leader grp_prisonners_2, 
+ 0, 
+ ["ACE_MainActions"], 
+ _action 
+] call ace_interact_menu_fnc_addActionToObject;
 
 // Init Shinriel's SuperPowers scripts
 call compileFinal preprocessFileLineNumbers "functions\powers\commons.sqf";

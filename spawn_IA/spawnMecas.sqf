@@ -19,8 +19,7 @@ GRP_MECA_PETIT = [_tl_ENI_1, _at_ENI_1, _ass_at_ENI_1, _tl_ENI_1, _mg_ENI_1, _as
 GRP_MECA_GRAND = [_sl_ENI_1, _tl_ENI_1, _at_ENI_1, _fsl_ENI_1, _fsl_ENI_1, _tl_ENI_1, _mg_ENI_1, _fsl_ENI_1];
 
 //Récupère le nombre de joueurs vivants pour ajustement du nombre de troupes en renfort
-private _allPlayers = (playableUnits select {_x != HC_Slot}) + (switchableUnits select {_x != HC_Slot});
-private _nbAlivePlayers = count _allPlayers;
+
 private _tbMrkSpawnMeca = allMapMarkers select {["mrkSpawn_meca_", _x, true] call BIS_fnc_inString};
 private _nbMrk = count _tbMrkSpawnMeca;
 private _posSpawn = "";
@@ -30,6 +29,9 @@ private _mrkSpawn = "";
 private _isFirst = true;
 
 while {true} do {
+
+	private _allPlayers = (playableUnits select {_x != HC_Slot}) + (switchableUnits select {_x != HC_Slot});
+	private _nbAlivePlayers = count _allPlayers;
 
 	if (_isFirst) then {
 		//Première vague : arrivent environ 45 minutes après le début de partie

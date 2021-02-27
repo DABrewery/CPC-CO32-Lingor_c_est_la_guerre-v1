@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1665;
+	toggles=1537;
 	class ItemIDProvider
 	{
 		nextID=4392;
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1606;
+		nextID=1658;
 	};
 	class Camera
 	{
@@ -27,7 +27,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="CPC-CO15-Lingor_c_est_la_guerre-v1";
+sourceName="CPC-CO32-Lingor_c_est_la_guerre-v1";
 addons[]=
 {
 	"A3_Ui_F",
