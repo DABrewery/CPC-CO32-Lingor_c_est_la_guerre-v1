@@ -32,6 +32,7 @@ if (isServer || isDedicated) then {
 	_veh addItemCargoGlobal ["rhs_1PN138",20];
 	_veh addItemCargoGlobal ["rhs_pdu4",3];
 	_veh addItemCargoGlobal ["ACE_Flashlight_KSF1",20];
+	_veh addItemCargoGlobal ["rhs_mag_9k38_rocket",4];
 	_veh addMagazineCargoGlobal ["rhs_VG40OP_white", 20];
 	_veh addItemCargoGlobal ["ACE_wirecutter",5];
 	_veh addItemCargoGlobal ["ACE_EntrenchingTool",5];

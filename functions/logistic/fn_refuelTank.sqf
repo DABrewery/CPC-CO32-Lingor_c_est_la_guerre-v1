@@ -1,18 +1,18 @@
 /*
- * Author: tanin69
- * Refuel the tank of a fuel vehicle from a nearby fuel station
- *
- * Arguments:
- * 0: Vehicle that the tank is to be refueled <OBJECT>
- * 1: Refuel station <OBJECT>
- * 2: Refueling area : area in which the vehicle must be to be refueled. If the vehicle leaves the area during refuling, the operation is cancelled <OBJECT - Trigger>
- * 3: (optional, default : 10000) Tank capacity of the vehicle <NUMBER>
- *
- * Return value:
- * Nothing
- *
- * Example : [veh, fuelStation, trgRefuel, 5000] call fn_refuelTank.sqf
- *
+  Author: tanin69
+  Refuel the tank of a fuel vehicle from a nearby fuel station
+ 
+  Arguments:
+  0: Vehicle that the tank is to be refueled <OBJECT>
+  1: Refuel station <OBJECT>
+  2: Refueling area : area in which the vehicle must be to be refueled. If the vehicle leaves the area during refuling, the operation is cancelled <OBJECT - Trigger>
+  3: (optional, default : 10000) Tank capacity of the vehicle <NUMBER>
+ 
+  Return value:
+  Nothing
+ 
+  Example : [veh, fuelStation, trgRefuel, 5000] call fn_refuelTank.sqf
+ 
  */
 
 params[

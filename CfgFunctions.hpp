@@ -34,6 +34,8 @@ class CfgFunctions
 			class findClearZoneInArea {};
 			class isInLoadout {};
 			class skipTimeWithFog {};
+			class findUnloadPos {};
+			class sideGroupsKnowPlayer {};
 		};
 
 		class searchlight

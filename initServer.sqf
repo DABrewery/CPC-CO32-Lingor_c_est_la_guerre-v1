@@ -18,10 +18,12 @@ gdc_plutoDebug = false;
 //[1000,-1,true,1000,1000,1000] execVM "zbe_cache\main.sqf";
 
 //Get number of players to allow dynamic ENI units number adaptation
-nbJoueurs = playersNumber west + playersNumber resistance;
+nbJoueurs = playableUnits + (switchableUnits select {_x != HC_Slot});
 
 //Server variables
 isPrisonLib = false;
+isPlayerDetected = false;
+isHVTKilled = false;
 computer_lab101 setVariable ["challengeSuccessfull", false, true];
 computer_lab101 setVariable ["isBeeingChallenged", false, true];
 computer_lab102 setVariable ["challengeSuccessfull", false, true];

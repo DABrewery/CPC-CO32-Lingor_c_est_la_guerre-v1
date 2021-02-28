@@ -18,6 +18,15 @@ Avantage majeur : un drone RAVEN
 
 ## Changelog
 
+### v3, 28/02/2021
+
+* Logistique : correction de la logistique SSS sur la zone sud qui n'avait pas la bonne liste de stuff
+* Logistique : ajout de munitions IGLA supplémentaires dans la caisse Picaros au spawn
+* Renforts extérieurs : le délai des premiers renforts ne coure qu'à partir de la détection d'un joueur par les ENI
+* Renforts extérieurs : les paras ne sautent pas directement sur les joueurs, sauf malchance
+* Renforts extérieurs : certains renforts ne sont appelés que si au moins un groupe d'hostile a connaissance d'un joueur (knowsAbout > 0)
+* Objectifs : amélioration de la prise en compte du kill de l'HVT
+
 ### v2, 27/02/2021
 
 Première release
@@ -27,7 +36,6 @@ Première release
 ### Prévu
 
 * Correction du bug des projecteurs qui ne tournent pas (semble être un bug Arma)
-* Amélioration de la prise en compte du kill de l'HVT
 * Correction du bug de wp qui s'ajoutent à l'infini avec lucyGroupRandomPatrol (bug arma confirmé)
 * Nettoyage / refactoring propre de plusieurs fonctions : spawnMeca.sqf et spawnParadrop.sqf en particulier
 * Meilleure intégration des Shinriel's super power (cf. fn_activatePowerWithObject.sqf)

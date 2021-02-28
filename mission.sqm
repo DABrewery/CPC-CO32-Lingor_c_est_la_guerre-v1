@@ -8,7 +8,7 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=4392;
+		nextID=4393;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,13 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1710;
+		nextID=1814;
 	};
 	class Camera
 	{
-		pos[]={4527.5166,156.10822,1770.3129};
-		dir[]={-0.83353925,-0.54748243,-0.073995426};
-		up[]={-0.54533786,0.8368172,-0.048411045};
-		aside[]={-0.088424847,-3.7252903e-009,0.99608284};
+		pos[]={5560.561,47.152348,8884.9717};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710671,0.70710683};
 	};
 };
 binarizationWanted=0;
@@ -1776,7 +1775,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=40;
+		items=41;
 		class Item0
 		{
 			dataType="Marker";
@@ -12134,17 +12133,18 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={5806.9829,22.190212,4753.8931};
-										angles[]={0,0.97558177,0};
+										position[]={5806.9829,22.190437,4753.8926};
+										angles[]={0,0.97558665,0};
 									};
 									side="East";
 									flags=7;
 									class Attributes
 									{
-										init="call{this disableAI ""PATH""}";
+										init="call{this disableAI ""PATH"";" \n "this addEventHandler [""Killed"", {isHVTKilled = true}];}";
 									};
 									id=1340;
 									type="rhs_vdv_flora_officer_armored";
+									atlOffset=0.00022506714;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -12370,10 +12370,11 @@ class Mission
 							{
 							};
 							id=1339;
+							atlOffset=0.00022506714;
 						};
 					};
 					id=3250;
-					atlOffset=2.1624832;
+					atlOffset=2.1625957;
 				};
 				class Item8
 				{
@@ -23118,7 +23119,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[      ""B_Quadbike_01_F"",      ""B_LSV_01_armed_F"",      ""B_MRAP_01_hmg_F"",      [""B_supplyCrate_F"",""Weapons/Ammo"",""\A3\Ui_f\data\IGUI\Cfg\simpleTasks\types\rearm_ca.paa"",{          clearItemCargoGlobal _this;          clearMagazineCargoGlobal _this;          clearWeaponCargoGlobal _this;          clearBackpackCargoGlobal _this;          _this addWeaponCargoGlobal [""arifle_MX_F"",4];          _this addMagazineCargoGlobal [""30Rnd_65x39_caseless_mag"",40];          _this addWeaponCargoGlobal [""arifle_TRG21_F"",4];          _this addMagazineCargoGlobal [""30Rnd_556x45_Stanag"",40];          _this addWeaponCargoGlobal [""srifle_EBR_F"",2];          _this addMagazineCargoGlobal [""20Rnd_762x51_Mag"",20];      }]  ]";
+							value="call int_fnc_SSSCargo";
 						};
 					};
 				};
@@ -29468,6 +29469,26 @@ class Mission
 			id=4358;
 			type="EmptyDetectorAreaR50";
 			atlOffset=0.34000015;
+		};
+		class Item40
+		{
+			dataType="Trigger";
+			position[]={4482.4482,0.20328522,4724.667};
+			class Attributes
+			{
+				name="trgPlayerDetected";
+				condition="call{this}";
+				onActivation="call{hint ""joueur détecté"";" \n "isPlayerDetected = true;}";
+				sizeA=2835.8811;
+				sizeB=4063.031;
+				activationType="EAST D";
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+				isServerOnly=1;
+			};
+			id=4392;
+			type="EmptyDetector";
+			atlOffset=-37.806;
 		};
 	};
 };
