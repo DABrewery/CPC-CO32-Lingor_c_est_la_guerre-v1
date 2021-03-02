@@ -18,7 +18,7 @@ gdc_plutoDebug = false;
 //[1000,-1,true,1000,1000,1000] execVM "zbe_cache\main.sqf";
 
 //Get number of players to allow dynamic ENI units number adaptation
-nbJoueurs = playableUnits + (switchableUnits select {_x != HC_Slot});
+nbJoueurs = count (playableUnits + (switchableUnits select {_x != HC_Slot}));
 
 //Server variables
 isPrisonLib = false;

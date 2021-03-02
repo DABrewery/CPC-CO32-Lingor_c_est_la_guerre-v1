@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1814;
+		nextID=1918;
 	};
 	class Camera
 	{
@@ -26,7 +26,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="CPC-CO32-Lingor_c_est_la_guerre-v2";
+sourceName="CPC-CO32-Lingor_c_est_la_guerre-v3";
 addons[]=
 {
 	"A3_Ui_F",

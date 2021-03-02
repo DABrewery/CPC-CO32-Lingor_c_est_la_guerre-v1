@@ -11,7 +11,7 @@ Parameter(s):
 	_side - the side for which we check if the groups know the player (optional, default opfor)<SIDE>
 	
 Returns:
-	On success : an array with 0: group that knows about a player, the player known, knowsAbout value <ARRAY>
+	On success : an array with 0: group that knows about a player, 1: the player known, 2: knowsAbout value <ARRAY>
 
 Examples:
 (begin example)
