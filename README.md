@@ -18,6 +18,9 @@ Avantage majeur : un drone RAVEN
 
 ## Changelog
 
+### v3, 06/03/2021
+* Correction de la durée du sleep de la boucle de paradrop, restée à 10 s. pour une durée mal définie
+
 ### v3, 28/02/2021
 
 * Logistique : correction de la logistique SSS sur la zone sud qui n'avait pas la bonne liste de stuff
