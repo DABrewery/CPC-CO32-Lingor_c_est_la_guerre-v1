@@ -1,10 +1,9 @@
-/* Paradrope des troupes russes en renfort avec une fonction random sur déclenchement de l'event handler scripté "goParadrop" */
+/* Troupes russes en renfort avec une fonction random */
 
-
-//Définition de paramètres clé du script
+//Définition de paramètres généraux du script
 private _ALTITUDE_PARADROP = 300; //Altitude à laquelle seront dropés les paras
 private _DISTANCE_PARADROP = -400; //Distance du paradrop par rapport au plus proche joueur. Un chiffre négatif implique une dz derrière le plus proche joueur
-private _PROBA_NO_REINF = 0.33;
+private _PROBA_NO_REINF = 0.33; // Probabilité de non envoi des renforts si l'HVT a été tué
 
 //Définition des groupes de para
 private _fsl_ENI_1    = "rhs_vdv_flora_rifleman";
@@ -20,13 +19,26 @@ private _tl_ENI_1     = "rhs_vdv_flora_sergeant";
 private _sl_ENI_1     = "rhs_vdv_flora_officer_armored";
 private _medic_ENI_1  = "rhs_vdv_flora_medic";
 
+
+private _tbMrkSpawnMeca = allMapMarkers select {["mrkSpawn_meca_", _x, true] call BIS_fnc_inString};
+private _nbMrk = count _tbMrkSpawnMeca;
+private _posSpawn = "";
+private _nearestDistance = 1000000;
+private _nearestPlayer = "";
+private _mrkSpawn = "";
+private _isFirst = true;					//La première vague de renfort arrive après environ 45 minutes
+
 //Groupe de 6 PAX
 GRP_PARA_PETIT = [_tl_ENI_1, _at_ENI_1, _ass_at_ENI_1, _tl_ENI_1, _mg_ENI_1, _ass_mg_ENI_1];
 
 //Groupe de 12 PAX, emport maximal du mi-8
 GRP_PARA_GRAND = [_sl_ENI_1, _medic_ENI_1, _tl_ENI_1, _at_ENI_1, _ass_at_ENI_1, _fsl_ENI_1, _fsl_ENI_1, _tl_ENI_1, _mg_ENI_1, _ass_mg_ENI_1, _fsl_ENI_1, _fsl_ENI_1];
 
-private _isFirst = true;
+//Groupe de 6 PAX
+GRP_MECA_PETIT = [_tl_ENI_1, _at_ENI_1, _ass_at_ENI_1, _tl_ENI_1, _mg_ENI_1, _ass_mg_ENI_1];
+
+//Groupe de 12 PAX, emport maximal du mi-8
+GRP_MECA_GRAND = [_sl_ENI_1, _tl_ENI_1, _at_ENI_1, _fsl_ENI_1, _fsl_ENI_1, _tl_ENI_1, _mg_ENI_1, _fsl_ENI_1];
 
 // Waiting for player detection (managed by a trigger)
 while {!isPlayerDetected} do {
@@ -37,34 +49,37 @@ systemChat "Le script de renfort para est déclenché.";
 
 while {true} do {
 
+	//Si le HVT est tué, il y a 1/_PROBA_NO_REINF chance pour que certains  renforts ne soient pas appelés
 	private _goReinf = true;
-
-	//Si le HVT est tué, il y a 1/3 pour que la vague de renfort ne parte pas
 	if (isHVTKilled && (random 1 < _PROBA_NO_REINF)) then {
 		_goReinf = false;
-		systemChat "L'appel des renforts para a échoué (HVT tué)";
+		systemChat "L'appel des renforts a échoué (HVT tué)";
 	};
 
+	//Vérifie si les joueurs sont toujours repérés par les ENI
+	private _isPlayerKnownByENI = false;
+	if (count ([opfor] call int_fnc_sideGroupsKnowPlayer) > 0) then {_isPlayerKnownByENI = true};
+	
 	if (_goReinf) then {
 
-		//Récupère le nombre de joueurs vivants pour ajustement du nombre de troupes en renfort
-		private _allPlayers = playableUnits + (switchableUnits select {_x != HC_Slot});
-		private _nbAlivePlayers = count _allPlayers;
-		private _isPlayerKnownByENI = false;
-		
-		//Vérifie si les joueurs sont toujours repérés par les ENI
-		if (count ([opfor] call int_fnc_sideGroupsKnowPlayer) > 0) then {_isPlayerKnownByENI = true};
-		
 		if (_isFirst) then {
 			//Première vague de paradrop : arrivent environ 45 minutes après le début de partie
 			//sleep 10;
 			sleep 2700;
-			_isFirst = false;
+		_isFirst = false;
 		} else {
 			//Vagues suivantes : arrivent toutes les 20 à 30 minutes
 			//sleep 20;
 			sleep 1200 + random 600;
 		};
+
+		//Récupère le nombre de joueurs vivants pour ajustement du nombre de troupes en renfort
+		private _allPlayers = playableUnits + (switchableUnits select {_x != HC_Slot});
+		private _nbAlivePlayers = count _allPlayers;
+
+		/*********************/
+		/* Renforts paradrop */
+		/*********************/
 
 		//Détermine la position de paradrop du ou des groupes en attaque directe : drop à 300 m. du joueur le plus proche 
 		private _tbPosParaAttack = [getMarkerPos "mrkSpawnParadrop", nil, _DISTANCE_PARADROP] call int_fnc_findUnloadPos;
@@ -143,5 +158,54 @@ while {true} do {
 
 			};
 		};
+
+		/*********************/
+		/* Renforts mécas */
+		/*********************/
+
+		if (_isPlayerKnownByENI) then {
+
+			systemChat "Un méca va être envoyé en renfort.";
+
+			//Choisit un point de spawn en s'assurant qu'il n'est pas trop près des joueurs
+			for [{ _i = 0 }, {_i < _nbMrk}, { _i = _i + 1 }] do {
+				_nearestDistance = 1000000;
+				_posSpawn = getMarkerPos (_tbMrkSpawnMeca#_i);
+				_mrkSpawn = (_tbMrkSpawnMeca#_i);
+				{
+					_currentDistance = _x distance2D _posSpawn;
+					if (_currentDistance < _nearestDistance) then {
+						_nearestPlayer = _x;
+						_nearestDistance = _currentDistance;
+					};
+				} forEach _allPlayers;
+
+				if (_nearestDistance > 1000 && _nearestDistance < 2000) exitWith {};
+			};
+
+			//On trouve le point d'unload pour le méca : à 500 m. du joueur le plus proche
+			private _tbPosUnload = [_posSpawn] call int_fnc_findUnloadPos;
+			_mrkUnload = _tbPosUnload#2;
+			_mrkSAD = createMarkerLocal ["mrk" + str floor (random 10000), _tbPosUnload#1];
+			_mrkSAD setMarkerTypeLocal "hd_destroy";
+			
+			//Et on envoie la cavalerie
+			switch true do {
+				case (_nbAlivePlayers < 11): {
+					[[_mrkSpawn, _mrkUnload, _mrkSAD], opfor, GRP_MECA_PETIT] spawn int_fnc_spawnMechInfantry;
+				};
+				case (_nbAlivePlayers > 10 && _nbAlivePlayers < 21): {
+					[[_mrkSpawn, _mrkUnload, _mrkSAD], opfor, GRP_MECA_GRAND] spawn int_fnc_spawnMechInfantry;
+				};
+				case (_nbAlivePlayers > 20): {
+					[[_mrkSpawn, _mrkUnload, _mrkSAD], opfor, GRP_MECA_GRAND] spawn int_fnc_spawnMechInfantry;
+					sleep 60;
+					[[_mrkSpawn, _mrkUnload, _mrkSAD], opfor, GRP_MECA_GRAND] spawn int_fnc_spawnMechInfantry;
+				};
+			};
+		}
 	};
+
+	sleep 60;
+
 };
