@@ -19,7 +19,7 @@ Avantage majeur : un drone RAVEN
 ## Changelog
 
 ### v3, 06/03/2021
-* Correction de la durée du sleep de la boucle de paradrop, restée à 10 s. pour une durée mal définie
+* Correction de la durée du sleep de la boucle de paradrop, restée à 10 s. pour une raison mal définie
 
 ### v3, 28/02/2021
 
