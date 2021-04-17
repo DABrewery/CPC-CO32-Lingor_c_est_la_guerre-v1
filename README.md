@@ -38,6 +38,8 @@ Première release
 
 ### Prévu
 
+* Intégrer le système de respawn custom
+* Ajouter des patrouilles aléatoires dans certaines villes
 * Correction du bug des projecteurs qui ne tournent pas (semble être un bug Arma)
 * Correction du bug de wp qui s'ajoutent à l'infini avec lucyGroupRandomPatrol (bug arma confirmé)
 * Nettoyage / refactoring propre de plusieurs fonctions : spawnMeca.sqf et spawnParadrop.sqf en particulier
@@ -45,4 +47,4 @@ Première release
 
 ### Idées en vrac
 
-* Réfléchir à un système de respawn compatible avec l'esprit canard pour pouvoir jouer une partie marathon
+* 
