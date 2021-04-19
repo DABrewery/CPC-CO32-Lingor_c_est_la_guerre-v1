@@ -24,6 +24,7 @@ nbJoueurs = count (playableUnits + (switchableUnits select {_x != HC_Slot}));
 isPrisonLib = false;
 isPlayerDetected = false;
 isHVTKilled = false;
+randomCityPatrols = true;
 computer_lab101 setVariable ["challengeSuccessfull", false, true];
 computer_lab101 setVariable ["isBeeingChallenged", false, true];
 computer_lab102 setVariable ["challengeSuccessfull", false, true];
@@ -230,6 +231,7 @@ switch _heavyThreat do {
 };
 
 //Les camps et objectifs
+execVM "spawn_IA\spawnCitiesPatrols.sqf";
 execVM "spawn_IA\spawnSargentoRadio_1.sqf";
 execVM "spawn_IA\spawnSargentoRadio_2.sqf";
 execVM "spawn_IA\spawnMarukoRadio.sqf";

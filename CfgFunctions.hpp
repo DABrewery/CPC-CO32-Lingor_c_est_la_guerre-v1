@@ -36,6 +36,8 @@ class CfgFunctions
 			class skipTimeWithFog {};
 			class findUnloadPos {};
 			class sideGroupsKnowPlayer {};
+			class getAllLocations {};
+			class getNearestMarker {};
 		};
 
 		class searchlight
