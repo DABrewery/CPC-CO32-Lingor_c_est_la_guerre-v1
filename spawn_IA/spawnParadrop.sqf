@@ -3,7 +3,7 @@
 
 //Définition de paramètres clé du script
 private _ALTITUDE_PARADROP = 300; //Altitude à laquelle seront dropés les paras
-private _DISTANCE_PARADROP = -400; //Distance du paradrop par rapport au plus proche joueur. Un chiffre négatif implique une dz derrière le plus proche joueur
+private _DISTANCE_PARADROP = -400; //Distance du paradrop par rapport au plus proche joueur. Un chiffre négatif implique une dz derrière le plus proche joueur par rapport au vecteur d'approche des héli
 private _PROBA_NO_REINF = 0.33;
 
 //Définition des groupes de para
@@ -66,7 +66,7 @@ while {true} do {
 			sleep 1200 + random 600;
 		};
 
-		//Détermine la position de paradrop du ou des groupes en attaque directe : drop à 300 m. du joueur le plus proche 
+		//Détermine la position de paradrop du ou des groupes en attaque directe : drop à _DISTANCE_PARADROP du joueur le plus proche 
 		private _tbPosParaAttack = [getMarkerPos "mrkSpawnParadrop", nil, _DISTANCE_PARADROP] call int_fnc_findUnloadPos;
 		private _posParaAttack = _tbPosParaAttack#0;
 		private _posNearestPlayer = _tbPosParaAttack#1; 

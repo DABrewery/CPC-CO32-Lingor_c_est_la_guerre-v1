@@ -87,6 +87,12 @@ isSupportNorthDispo = true;
 isSupportWestDispo = true;
 isSupportSouthDispo = true;
 
+//Variables de gestion du respawn
+opSide = east;
+goRsp = false; 	//To respawn or not to respawn - variable to broadcast
+dispoRsp = false;
+//nbRspTck = 0; 	//Number of respawn tickets - variable to broadcast
+
 //Actions ACE des objets d'évac/fin de partie
 _action_win = [ 
  "finMissionWin", 

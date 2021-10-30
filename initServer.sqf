@@ -256,5 +256,8 @@ execVM "spawn_IA\spawnPrison.sqf";
 execVM "spawn_IA\spawnParadrop.sqf";
 execVM "spawn_IA\spawnMecas.sqf";
 
+//Initialize respawn delay
+[60] spawn int_fnc_respawnTimer;
+
 //Script pour les projecteurs de nuit
 [] spawn int_fnc_initSearchlight;

@@ -66,7 +66,7 @@ while {true} do {
 			//Première vague de paradrop : arrivent environ 45 minutes après le début de partie
 			//sleep 10;
 			sleep 2700;
-		_isFirst = false;
+			_isFirst = false;
 		} else {
 			//Vagues suivantes : arrivent toutes les 20 à 30 minutes
 			//sleep 20;

@@ -15,7 +15,7 @@ private _medic_ENI_1  = "rhs_vdv_flora_medic";
 //Groupe de 6 PAX
 GRP_MECA_PETIT = [_tl_ENI_1, _at_ENI_1, _ass_at_ENI_1, _tl_ENI_1, _mg_ENI_1, _ass_mg_ENI_1];
 
-//Groupe de 12 PAX, emport maximal du mi-8
+//Groupe de 12 PAX
 GRP_MECA_GRAND = [_sl_ENI_1, _tl_ENI_1, _at_ENI_1, _fsl_ENI_1, _fsl_ENI_1, _tl_ENI_1, _mg_ENI_1, _fsl_ENI_1];
 
 private _PROBA_NO_REINF = 0.33;

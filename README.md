@@ -18,7 +18,12 @@ Avantage majeur : un drone RAVEN
 
 ## Changelog
 
+### v4, 30/10/2021
+
+Intégration du custom respawn pour le mode marathon
+
 ### v3, 06/03/2021
+
 * Correction de la durée du sleep de la boucle de paradrop, restée à 10 s. pour une durée mal définie
 
 ### v3, 28/02/2021
@@ -43,6 +48,3 @@ Première release
 * Nettoyage / refactoring propre de plusieurs fonctions : spawnMeca.sqf et spawnParadrop.sqf en particulier
 * Meilleure intégration des Shinriel's super power (cf. fn_activatePowerWithObject.sqf)
 
-### Idées en vrac
-
-* Réfléchir à un système de respawn compatible avec l'esprit canard pour pouvoir jouer une partie marathon
