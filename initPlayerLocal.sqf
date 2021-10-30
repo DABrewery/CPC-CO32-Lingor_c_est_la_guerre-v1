@@ -36,3 +36,5 @@ _action = [
  	["ACE_SelfActions"], 
  	_action 
 ] call ace_interact_menu_fnc_addActionToObject;
+
+if {didJIP} then {player setDamage 1;}
