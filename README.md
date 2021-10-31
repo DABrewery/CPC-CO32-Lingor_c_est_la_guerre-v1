@@ -47,4 +47,7 @@ Première release
 
 ### Idées en vrac
 
-* 
+* Gérer le fade out lors du changement de temps
+* Rendre possible le drop SSS en dehors des zones prévues, avec bonus de temps si dépôt de mun
+* Gérer la condition du air drop par rapport à la zone à partir de la zone où l'on se trouve
+* Sinon mettre la condition d'appel SSS à un objet sur la zone
