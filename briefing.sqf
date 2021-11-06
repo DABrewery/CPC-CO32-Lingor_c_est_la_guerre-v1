@@ -149,7 +149,7 @@ Auteur : tanin69<br/><br/>
 > A tous les canards, vous savez bien pourquoi !<br/>
 > A ma femme qui ne m'a pas encore pas quitté, je ne sais toujours pas pourquoi (en dehors de mes talents sexuels exceptionnels, mais ça n'explique quand même pas tout)<br/><br/>
 
-Release notes : https://github.com/DABrewery/CPC-CO15-Lingor_c_est_la_guerre-v1
+Release notes : https://github.com/DABrewery/CPC-CO32-Lingor_c_est_la_guerre-vx
 "]];
 
 
@@ -157,7 +157,7 @@ Release notes : https://github.com/DABrewery/CPC-CO15-Lingor_c_est_la_guerre-v1
 player createDiaryRecord ["Diary", ["Insertion et fin de mission", "
 
 <font color='#82ff05'>Insertion</font color><br/>
-Insertion au choix en dehors de zones rouges.<br/><br/>
+Insertion au choix en dehors des zones rouges.<br/><br/>
 Sur les campements BLUFOR (<marker name='marker_camp_North'>au nord</marker>, à <marker name='marker_camp_West'>l'ouest</marker> et au <marker name='marker_camp_South'>sud est</marker>), vous avez la possibilité de faire une pause jusqu'au moment de la journée (ou de la nuit) qui vous parait propice à votre opération (interaction ACE sur le feu de camp).<br/><br/>
 
 <font color='#82ff05'>Fin de mission</font color><br/>
@@ -171,14 +171,14 @@ player createDiaryRecord ["Diary", ["Logistique", "
 
 <font color='#82ff05'>Réapprovisionnement</font color><br/>
 
-A proximité de vos campements (<marker name='marker_camp_North'>au nord</marker>, à <marker name='marker_camp_West'>l'ouest</marker> et au <marker name='marker_camp_South'>sud est</marker>), vous disposez de 3 zones à partir desquelles vous pouvez appeler un VTOL pour vous faire larguer du réappro.<br/>
-Vous pouvez vous faire larguer le stuff n'importe où... Mais attention : si l'appareil de réappro est endommagé ou détruit, vous ne pourrez plus appeler le VTOL à partir de cette zone.<br/>
+Vous disposez de 3 axes à partir desquels vous pouvez appeler un VTOL pour vous faire larguer du réappro.<br/>
+Vous pouvez vous faire larguer le stuff n'importe où... Mais attention : si l'appareil de réappro est endommagé ou détruit, vous ne pourrez plus appeler le VTOL à partir de cet axe.<br/>
 Dans sa grande bonté, outre des munitions en quantité illimitée, l'armée US peut vous larguer :<br/>
-> Un camion tactique de type M1078 non armé pouvant transporter au moins 16 personnels, ainsi que des caisses de matériel<br/>
-> Un camion tactique de type M1078 armé d'une M2, avec la même capacité d'emport de personnel et de matériel<br/>
-> Un véhicule tout terrain non armé MRZR 4<br/><br/>
+> Un ou deux camions tactiques de type M1078 non armés pouvant transporter au moins 16 personnels, ainsi que des caisses de matériel<br/>
+> Un ou deux camions tactiques de type M1078 armés d'une M2, avec la même capacité d'emport de personnel et de matériel<br/>
+> Un ou deux véhicules tout terrain non armés MRZR 4<br/><br/>
 
-<font color='#ff8205'>Seuls les MARSOC équipés d'une PRC-148 sont en mesure de demander du réappro !</font color> (SSS - interaction ACE sur vous-même)<br/><br/>
+<font color='#ff8205'>Tout personnel équipé d'une PRC-148 est en mesure de demander du réappro !</font color> (SSS - interaction ACE sur vous-même)<br/><br/>
 
 <font color='#82ff05'>Réparations</font color><br/>
 Vous êtes tous des bricolos corrects : vous pouvez procéder à la plupart des réparations de base. Néanmoins :<br/>
@@ -211,6 +211,17 @@ Vous avez pu emmener avec vous 3 caisses de matos jusqu'à votre point d'inserti
 > Du matos US avec de l'équipement pour OP nocturne et deux trois babioles, dont des radios LP et CP supplémentaires, mais surtout un drone Raven<br/>
 > Du matos Picaros avec le même type de stuff que les MARSOC, mais en version russe<br/>
 > Du matos médical, dont du sang (tous les samedis matins sur la place de l'Eglise) pour ce vampire de Thétard<br/>
+
+"]];
+
+//Respawn
+player createDiaryRecord ["Diary", ["Respawn", "
+Les joueurs 'morts' sont envoyés sur une zone sûre pour pouvoir se retaper.<br /><br />
+Là, ils peuvent prendre du bon temps en attendant d'être rappelés au combat. Ils peuvent notamment passer en mode spectateur (customisé) en interagissant avec la TV qui se trouve dans le hall de l'hôtel.<br /><br />
+
+Le leader (en fait, le joueur en possession d'un téléphone cellulaire) peut, à intervalle minimum de 30 minutes, rappeler les hommes en attente (interaction ACE sur soi). CEux-ci seront regroupés autour de lui. Seuls les hommes sur la Safety Zone (l'ensemble de l'ilot et quelques mètres de mer autour) seront regroupés avec le leader.<br /><br />
+
+Attention, le leader ne peut regrouper ses hommes que si toute menace hostile dans un rayon de 300 m. a été éliminée. Cela NE signifie PAS que la zone est sûre (renforts, tir à distance, etc.). C'est au leader d'assurer la sécurité de la zone de regroupement par ses propres moyens.<br /><br />
 
 "]];
 

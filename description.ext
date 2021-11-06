@@ -33,8 +33,20 @@ loadScreen = "img\defeat.jpg";
 enableDebugConsole = 1;
 saving = 0;
 
+//Options de respawn
+respawnDialog = 1;
+respawn = 3; // Respawn sur base
+respawnDelay = 5;
+respawnOnStart = 0;
+
 // Scripts disponibles pour la mission
 #include "CfgFunctions.hpp"
+
+//Paramètres utilisateur de la mission
+#include "missionParams.hpp"
+
+//HUD pour la fonction de custom renforts/respawn
+#include "UI\reinfHUD.hpp"
 
 // Débriefing
 class CfgDebriefing
@@ -47,6 +59,16 @@ class CfgDebriefing
 		pictureBackground = "";
 		picture = "mil_flag";
 		pictureColor[] = {1,0.8,0.0,1};
+	};
+
+	class endDeath
+	{
+		title = "Vous êtes tous morts !";
+		subtitle = "";
+		description = "Vous ferez mieux la prochaine fois.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 
 	class End2

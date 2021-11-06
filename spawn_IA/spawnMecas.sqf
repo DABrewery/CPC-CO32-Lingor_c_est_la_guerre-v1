@@ -44,8 +44,8 @@ while {true} do {
 
 	if (_goReinf) then {
 
-		private _allPlayers = playableUnits + (switchableUnits select {_x != HC_Slot});
-		private _nbAlivePlayers = count _allPlayers;
+		private _allPlayers = playableUnits  + (switchableUnits select {_x != HC_Slot});
+		private _nbAlivePlayers = count _allPlayers select {!(_x inArea trg_SafetyZone)};
 		private _isPlayerKnownByENI = false;
 
 		//Vérifie si les joueurs sont toujours repérés par les ENI
@@ -77,7 +77,7 @@ while {true} do {
 						_nearestPlayer = _x;
 						_nearestDistance = _currentDistance;
 					};
-				} forEach _allPlayers;
+				} forEach _nbAlivePlayers;
 
 				if (_nearestDistance > 1000 && _nearestDistance < 2000) exitWith {};
 			};

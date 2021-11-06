@@ -26,6 +26,14 @@ class CfgFunctions
 			class refuelTank {};
 			class addCargo {};
 		};
+				
+		class customRespawn
+		{
+			file="functions\customRespawn";
+			class customRegroup {};
+			class customSpectate {};
+			class respawnTimer {};
+		};
 		
 		class misc
 		{
@@ -36,7 +44,6 @@ class CfgFunctions
 			class skipTimeWithFog {};
 			class findUnloadPos {};
 			class sideGroupsKnowPlayer {};
-			class respawnTimer {};
 		};
 
 		class searchlight

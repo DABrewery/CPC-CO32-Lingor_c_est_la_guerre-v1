@@ -1,6 +1,5 @@
 /* Définit la cargaison d'un airdrop logistique pour le module SSS*/
 
-
 private _listSSS = [];
 
 if (isNil "isTruck1Delivered") then {
@@ -16,6 +15,7 @@ if (isNil "isTruck1Delivered") then {
 				clearBackpackCargoGlobal _this;
 				_this addItemCargoGlobal ["Toolkit",5];
 				isTruck1Delivered = true;
+				publicVariable "isTruck1Delivered";
 			}
 		]
 };
@@ -33,6 +33,7 @@ if (isNil "isTruck2Delivered") then {
 				clearBackpackCargoGlobal _this;
 				_this addItemCargoGlobal ["Toolkit",5];
 				isTruck2Delivered = true;
+				publicVariable "isTruck2Delivered";
 			}
 		]
 };
@@ -50,6 +51,7 @@ if (isNil "isTruck3Delivered") then {
 				clearBackpackCargoGlobal _this;
 				_this addItemCargoGlobal ["Toolkit",5];
 				isTruck3Delivered = true;
+				publicVariable "isTruck3Delivered";
 			}
 		]
 };
@@ -67,6 +69,7 @@ if (isNil "isCar1Delivered") then {
 				clearBackpackCargoGlobal _this;
 				_this addItemCargoGlobal ["Toolkit",5];
 				isCar1Delivered = true;
+				publicVariable "isCar1Delivered";
 			}
 		]
 };
@@ -86,7 +89,7 @@ _listSSS pushBack
 			_this addMagazineCargoGlobal ["rhs_mag_100Rnd_556x45_M855_cmag",10];
 			_this addMagazineCargoGlobal ["rhsusf_mag_17Rnd_9x19_FMJ",20];
 			_this addItemCargoGlobal ["rhs_mag_an_m8hc",10];
-			_this addItemCargoGlobal ["rhs_mag_m67", 10];
+			_this addItemCargoGlobal ["rhs_mag_m67", 30];
 			
 			_this addMagazineCargoGlobal ["rhs_30Rnd_545x39_7N6M_AK",30];
 			_this addMagazineCargoGlobal ["rhs_100Rnd_762x54mmR",10];

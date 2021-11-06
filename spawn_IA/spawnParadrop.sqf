@@ -48,8 +48,8 @@ while {true} do {
 	if (_goReinf) then {
 
 		//Récupère le nombre de joueurs vivants pour ajustement du nombre de troupes en renfort
-		private _allPlayers = playableUnits + (switchableUnits select {_x != HC_Slot});
-		private _nbAlivePlayers = count _allPlayers;
+		private _allPlayers = playableUnits  + (switchableUnits select {_x != HC_Slot});
+		private _nbAlivePlayers = count _allPlayers select {!(_x inArea trg_SafetyZone)};
 		private _isPlayerKnownByENI = false;
 		
 		//Vérifie si les joueurs sont toujours repérés par les ENI
