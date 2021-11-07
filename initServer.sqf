@@ -258,7 +258,7 @@
 /* Launch server side scripts */
 	//Script pour les projecteurs de nuit
 	[] spawn int_fnc_initSearchlight;
-	//Regroup/respawn timer for first time. Other timer are launched by player action (cf. initPlayerLocal.sqf)
+	//Regroup/respawn timer for first time. The other timers are launched by player action (cf. initPlayerLocal.sqf)
 	private _firstRgpDelay = "firstRegroupeDelay" call BIS_fnc_getParamValue;
-	[_firstRgpDelay] spawn int_fnc_respawnTimer;
+	if (_firstRgpDelay > 0) then {[_firstRgpDelay] spawn int_fnc_respawnTimer;}
 /* Launch server side scripts */

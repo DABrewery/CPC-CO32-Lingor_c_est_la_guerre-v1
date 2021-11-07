@@ -1,5 +1,7 @@
 /* Custom "respawn", truly a simple TP of all previously respawned players on leader position */
 
+"call" remoteExec ["playSound"];
+
 //unhide hostile units (were hidden with custom spectator mode fn_customSpectate.sqf)
 {_x hideObject false;} count units opSide;
 

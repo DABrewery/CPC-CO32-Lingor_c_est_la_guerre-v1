@@ -9,7 +9,7 @@ class Params
 			"Modéré (entre 11 et 16 joueurs)",
 			"Elevé (entre 17 et 23 joueurs)",
 			"Très élevé (entre 24 et 32 joueurs)"
-			};
+		};
 		values[] = {0,10,16,17,24};
 		default = 0;
 	};
@@ -17,8 +17,8 @@ class Params
 	class firstRegroupeDelay
 	{
 		title = "Delai minimum avant le premier regroupement";
-		texts[] = {"1 minute","5 minutes","10 minutes","20 minutes","30 minutes"};
-		values[] = {60,300,600,1200,1800};
+		texts[] = {"Respawn désactivité","1 minute","5 minutes","10 minutes","20 minutes","30 minutes"};
+		values[] = {0,60,300,600,1200,1800};
 		default = 1800;
 	};
 	class otherRegroupeDelay
