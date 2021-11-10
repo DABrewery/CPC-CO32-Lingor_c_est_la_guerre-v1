@@ -25,7 +25,6 @@
 			if (_waypointsCount > 12) then {
 				reverse _waypoints;
 				for "_i" from _waypointsCount to 11 step -1 do { // minus 11 to have 12 waypoints left
-					systemChat format ["deleting wp %1", _i];
 					deleteWaypoint [_currentGroup, _i];
 				}
 			};
