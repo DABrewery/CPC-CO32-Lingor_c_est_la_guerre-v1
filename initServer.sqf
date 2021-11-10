@@ -258,3 +258,4 @@ execVM "spawn_IA\spawnMecas.sqf";
 
 //Script pour les projecteurs de nuit
 [] spawn int_fnc_initSearchlight;
+[] call int_fnc_clearWaypoints; 

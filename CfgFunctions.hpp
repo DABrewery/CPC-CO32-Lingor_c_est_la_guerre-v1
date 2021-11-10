@@ -36,6 +36,7 @@ class CfgFunctions
 			class skipTimeWithFog {};
 			class findUnloadPos {};
 			class sideGroupsKnowPlayer {};
+			class clearWaypoints {};
 		};
 
 		class searchlight
